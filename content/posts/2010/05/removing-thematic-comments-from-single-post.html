@@ -1,0 +1,33 @@
+---
+title: 'Removing Thematic Comments from Single Post '
+created: !!timestamp '2010-05-03 08:00:00'
+tags:
+    - wordpress
+    - thematic
+---
+
+{% mark excerpt -%}
+
+I was putting together a child theme for a client today, and they required
+that their posts exist without the ability to add comments. This is a very
+trimmed down template, only used for posting news. After hunting around a bit
+I finally found the exact action hook to remove in order to achieve this. 
+
+{% endmark -%}
+
+Add this into your functions.php file inside your child theme: 
+
+~~~php~~~        
+function unhook_thematic_functions() {
+    remove_action('thematic_comments_template', 'thematic_include_comments', '5');
+} add_action('init', 'unhook_thematic_functions');
+~~~~~~~~~
+
+This will completely remove the comments box from the post. 
+This isn't it though, I also had to remove the option to see comments in the loop, archive list,
+etc. So keep that in mind if you are removing comments from the theme
+altogether. I used filters for all the other places that I removed comment
+related code, so I won't go into that here.
+
+
+

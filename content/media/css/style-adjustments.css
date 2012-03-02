@@ -42,9 +42,10 @@ aside {width:312px;} /* Add 32px of padding to the width so default is actually 
 /*
 =============================================== E. Height Width Adjustments ===============================================
 */
-.content-padding-top {padding:20px 0 0 0;}
+.content-padding-title {padding:20px 0 0 20px;}
 /*
 =============================================== Link Colors ===============================================================
 */
 #page-title a { text-decoration: none;}
 #page-title a:hover { text-decoration: none;}
+a.backlink {font-size: 20px; line-height: 32px; margin-bottom: 7px; margin-top: 7px;}

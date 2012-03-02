@@ -56,7 +56,6 @@
               {% block header -%}
                   <a href="/" title="makewhatis&amp;" >
                   <h1 class="page-title">makewhatis&amp;</h1></a>
-                  <h2 id="blog-description">... random posts on linux and web development</h2>
               {%- endblock %}                
                 </header>
           {% block nav %}
@@ -64,7 +63,7 @@
           {{ render_nav(menu, ['sf-menu', 'sf-vertical']) }}
           {% endblock %}                
                 
-                <hr /><!-- DIVIDER -->
+                <!-- <hr /> DIVIDER -->
                 
                 <div class="content-padding">
                   <h2 class="twitter-heading">Latest Tweets</h2>
@@ -100,11 +99,8 @@
           <div id="content-container-bg-left">
             <div id="content-container-bg-right">
               <div id="content-container">
-                <section class="content">
                   {% block main %}
-                  {% endblock main %}
-                </section>
-              
+                  {% endblock main %}                              
               <div class="clearfix"></div>
             </div><!-- close #content-container -->
           </div><!-- close #content-container-bg-right" -->
@@ -121,19 +117,18 @@
     </div>
   </div>
   {% endblock content%}
-  {% block js %}
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  {% block jquery %}
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
   <script>window.jQuery || document.write("<script src='{{ media_url('js/libs/jquery-1.6.2.min.js') }}'>\x3C/script>")</script>
+  {% endblock jquery %}
+  {% block js %}
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+
   <script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
   <script src="{{ media_url('js/plugins.js') }}"></script>
   <script src="{{ media_url('js/script.js') }}"></script>
   <!-- end scripts-->
-  {% block jquery %}
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.5.1.min.js">\x3C/script>')</script>
-  {% endblock jquery %}
+
 
   {% block scripts %}
   {% endblock scripts %}

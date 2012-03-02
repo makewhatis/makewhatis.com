@@ -1,13 +1,29 @@
 {% macro render_excerpt(res, class=None) %}
 {% refer to res.url as post %}
-<article {{'class='~class if class }}>
-<h3><a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a></h3>
-<a href="{{ content_url(res.url) }}">{{ post.image|markdown|typogrify }}</a>
-{{ post.excerpt|markdown|typogrify }}
-<time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
-    Posted: {{ res.meta.created.strftime('%a, %d %b %Y') }}
-</time>
-</article>
+<div class="content-padding">
+    <div class="content-padding-title">
+        <h2 class="title">
+            <a href="{{ content_url(res.url) }}">
+                {{ res.meta.title }}
+            </a>
+        </h2>
+    </div>
+    <div class="post-details">
+    <time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
+        Posted: {{ res.meta.created.strftime('%a, %d %b %Y') }}
+    </time>
+    in categories &nbsp; 
+    {% if res.meta.tags %}      
+            {% for tag in res.meta.tags %}
+                <a class="small" href="{{ content_url('posts/tags/'~tag~'.html') }}">
+                {{ tag }}
+                </a>
+            {% endfor %}
+    {% endif %}
+    {{ post.excerpt|markdown|typogrify }}
+    <a class="button white medium" href="{{ content_url(res.url) }}">Read more</a>
+    </div>
+</div>
 {% endmacro %}
 
 {% macro render_nav(menu, cls=None) -%}
