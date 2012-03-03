@@ -51,7 +51,9 @@ h1 a:hover { text-decoration: none; color: #D2D2D2;}
 .title { text-decoration: none; color:#4AB1D3;}
 a.backlink {font-size: 20px; line-height: 32px; margin-bottom: 7px; margin-top: 7px;}
 
-
+#sidebar-container .tagcloud {padding-top: 20px;}
+#sidebar-container .tagcloud a { margin-top: 4px; padding: 6px 8px 4px 6px; }
+.tags a, #sidebar-container .tagcloud a { background: none repeat scroll 0 0 #FFFFFF; border-radius: 4px 4px 4px 4px; color: #4AB1D3; display: inline-block; margin: 2px; padding: 2px 6px; }
 
 .disabled a:hover {text-decoration:none;} /* Default link:hover*/
 ul, ol { margin-left: 0; margin-bottom:20px; }

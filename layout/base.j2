@@ -78,15 +78,19 @@
                   <div id="flickr-sidebar"></div>
                   <div class="clearfix"></div>
                 </div--><!-- close .content-padding -->
-                
-                
+                <div class="content-padding">
+                                        {% block sidebar %}
+              {% include "sidebar.j2" %}
+            {% endblock sidebar %}
+</div>
                 <div class="clearfix"></div>
                 </div><!-- close #sidebar-container -->
               </div><!-- close #sidebar-container-bg-right" -->
             </div><!-- close #sidebar-container-bg-left -->
-            
+
             <div id="sidebar-bottom">
               <div id="sidebar-bottom-right"></div>
+
             </div><!-- close #sidebar-bottom -->
         </aside><!-- SIDEBAR CLOSED -->
 
