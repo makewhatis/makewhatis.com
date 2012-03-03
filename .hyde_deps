@@ -23,16 +23,25 @@
 !!python/unicode 'blog/tags/wordpress.html': [macros.j2, base.j2, tagged_posts.j2,
   analytics.j2]
 !!python/unicode 'excerpts.xml': [atom.j2, macros.j2]
-!!python/unicode 'index.html': [blog.j2, !!python/unicode 'posts/2008/11/self-reliance.html',
+!!python/unicode 'index.html': [!!python/unicode 'posts/2010/07/magento-1-4-contact-form-error-unable-to-submit-your-request-please-try-again-later.html',
+  !!python/unicode 'posts/2010/10/get-all-files-from-ftp-recursively-to-another-linux-server.html',
+  !!python/unicode 'posts/2010/01/pretty-amazing-video.html', !!python/unicode 'posts/2010/03/redhat-5-install-screen-goes-black.html',
+  !!python/unicode 'posts/2011/02/linux-find-command-broken-down.html', !!python/unicode 'posts/2011/03/single-user-mode-red-hat-enterprise-linux-6-0-and-passwd-problems.html',
+  macros.j2, !!python/unicode 'posts/2010/01/apple-ipad.html', !!python/unicode 'posts/2011/03/configure-a-caching-only-name-server-to-forward-dns-queries.html',
+  listing.j2, !!python/unicode 'posts/2010/07/lewis-moorman-speaks-at-ocon-2010-about-openstack.html',
+  !!python/unicode 'posts/2010/05/magento-install-on-centos-5-3-rackspace-cloud.html',
+  base.j2, analytics.j2, !!python/unicode 'posts/2010/04/red-hatcentosfedora-display-release-info.html',
+  !!python/unicode 'posts/2010/07/easy-mail-installation-centos.html', blog.j2, !!python/unicode 'posts/2008/11/self-reliance.html',
   !!python/unicode 'posts/2010/05/removing-thematic-comments-from-single-post.html',
-  !!python/unicode 'posts/2010/05/amazing-list-of-articles-for-centos-setup.html',
-  !!python/unicode 'posts/2010/05/centos-opening-port-80-for-service-httpd.html',
-  !!python/unicode 'posts/2010/01/pretty-amazing-video.html', !!python/unicode 'posts/2009/04/a-mossocom-review.html',
-  listing.j2, !!python/unicode 'posts/2010/05/magento-install-on-centos-5-3-rackspace-cloud.html',
-  base.j2, analytics.j2, !!python/unicode 'posts/2010/03/redhat-5-install-screen-goes-black.html',
-  macros.j2, !!python/unicode 'posts/2010/04/red-hatcentosfedora-display-release-info.html',
-  !!python/unicode 'posts/2009/01/valley-peaks-web-series.html', !!python/unicode 'posts/2008-11-27-self-reliance.html',
-  !!python/unicode 'posts/2010/01/apple-ipad.html']
+  !!python/unicode 'posts/2010/11/lamp-setup-on-ubuntulinux-mint.html', !!python/unicode 'posts/2010/05/amazing-list-of-articles-for-centos-setup.html',
+  !!python/unicode 'posts/2011/03/register-red-hat-enterprise-linux-6-1-beta.html',
+  !!python/unicode 'posts/2009/04/a-mossocom-review.html', !!python/unicode 'posts/2010/11/zimbra-desktop-error-failed-to-execute-child-process-optzimbrazdesktoplinuxprismzdclient.html',
+  !!python/unicode 'posts/2011/01/installing-php-5-3-x-on-centos-5-5.html', !!python/unicode 'posts/2010/10/setting-up-ssh-key-authentication-centosfedora.html',
+  !!python/unicode 'posts/2010/09/installing-adobe-air-on-fedora-13.html', !!python/unicode 'posts/2009/01/valley-peaks-web-series.html',
+  !!python/unicode 'posts/2010/07/backing-up-mysql-database-to-rackspace-cloud-files-on-centos-5-4.html',
+  !!python/unicode 'posts/2011/03/red-hat-6-which-semanage-no-semanage-in.html', !!python/unicode 'posts/2010/05/centos-opening-port-80-for-service-httpd.html',
+  !!python/unicode 'posts/2010/09/wireless-setup-on-the-asus-ul30v-series.html', !!python/unicode 'posts/2011/01/using-postmarkapp-api-with-kohana-3.html',
+  !!python/unicode 'posts/2010/12/how-to-scrobble-pandora-to-last-fm.html']
 !!python/unicode 'media/css/autumn.css': []
 !!python/unicode 'media/css/bebas-neue/BebasNeue-webfont.svg': []
 !!python/unicode 'media/css/bebas-neue/Dharma Type Font License.txt': []
@@ -78,6 +87,28 @@
   blog.j2, macros.j2, base.j2, analytics.j2]
 !!python/unicode 'posts/2010/05/removing-thematic-comments-from-single-post.html': [
   blog.j2, macros.j2, base.j2, analytics.j2]
+!!python/unicode 'posts/2010/07/backing-up-mysql-database-to-rackspace-cloud-files-on-centos-5-4.html': [
+  blog.j2, macros.j2, base.j2, analytics.j2]
+!!python/unicode 'posts/2010/07/easy-mail-installation-centos.html': [blog.j2, macros.j2,
+  base.j2, analytics.j2]
+!!python/unicode 'posts/2010/07/lewis-moorman-speaks-at-ocon-2010-about-openstack.html': [
+  blog.j2, macros.j2, base.j2, analytics.j2]
+!!python/unicode 'posts/2010/07/magento-1-4-contact-form-error-unable-to-submit-your-request-please-try-again-later.html': [
+  blog.j2, macros.j2, base.j2, analytics.j2]
+!!python/unicode 'posts/2010/09/installing-adobe-air-on-fedora-13.html': [blog.j2,
+  macros.j2, base.j2, analytics.j2]
+!!python/unicode 'posts/2010/09/wireless-setup-on-the-asus-ul30v-series.html': [blog.j2,
+  macros.j2, base.j2, analytics.j2]
+!!python/unicode 'posts/2010/10/get-all-files-from-ftp-recursively-to-another-linux-server.html': [
+  blog.j2, macros.j2, base.j2, analytics.j2]
+!!python/unicode 'posts/2010/10/setting-up-ssh-key-authentication-centosfedora.html': [
+  blog.j2, macros.j2, base.j2, analytics.j2]
+!!python/unicode 'posts/2010/11/lamp-setup-on-ubuntulinux-mint.html': [blog.j2, macros.j2,
+  base.j2, analytics.j2]
+!!python/unicode 'posts/2010/11/zimbra-desktop-error-failed-to-execute-child-process-optzimbrazdesktoplinuxprismzdclient.html': [
+  blog.j2, macros.j2, base.j2, analytics.j2]
+!!python/unicode 'posts/2010/12/how-to-scrobble-pandora-to-last-fm.html': [blog.j2,
+  macros.j2, base.j2, analytics.j2]
 !!python/unicode 'posts/2010/20100119-pretty-amazing-video.html.markdown': [blog.j2,
   macros.j2, base.j2, analytics.j2]
 !!python/unicode 'posts/2010/20100128-apple-ipad.html.markdown': [blog.j2, macros.j2,
@@ -98,24 +129,61 @@
   blog.j2, macros.j2, base.j2, analytics.j2]
 !!python/unicode 'posts/2010/20101030-get-all-files-from-ftp-recursively-to-another-linux-server.html.markdown': [
   blog.j2, macros.j2, base.j2, analytics.j2]
+!!python/unicode 'posts/2011/01/installing-php-5-3-x-on-centos-5-5.html': [blog.j2,
+  macros.j2, base.j2, analytics.j2]
+!!python/unicode 'posts/2011/01/using-postmarkapp-api-with-kohana-3.html': [blog.j2,
+  macros.j2, base.j2, analytics.j2]
+!!python/unicode 'posts/2011/02/linux-find-command-broken-down.html': [blog.j2, macros.j2,
+  base.j2, analytics.j2]
+!!python/unicode 'posts/2011/03/configure-a-caching-only-name-server-to-forward-dns-queries.html': [
+  blog.j2, macros.j2, base.j2, analytics.j2]
+!!python/unicode 'posts/2011/03/red-hat-6-which-semanage-no-semanage-in.html': [blog.j2,
+  macros.j2, base.j2, analytics.j2]
+!!python/unicode 'posts/2011/03/register-red-hat-enterprise-linux-6-1-beta.html': [
+  blog.j2, macros.j2, base.j2, analytics.j2]
+!!python/unicode 'posts/2011/03/single-user-mode-red-hat-enterprise-linux-6-0-and-passwd-problems.html': [
+  blog.j2, macros.j2, base.j2, analytics.j2]
 !!python/unicode 'posts/angry-post.html': [blog.j2, macros.j2, base.j2, analytics.j2]
 !!python/unicode 'posts/happy-post.html': [blog.j2, macros.j2, base.j2, analytics.j2]
-!!python/unicode 'posts/index.html': [!!python/unicode 'posts/2010/01/pretty-amazing-video.html',
-  !!python/unicode 'posts/2010/03/redhat-5-install-screen-goes-black.html', !!python/unicode 'posts/2010/01/apple-ipad.html',
-  macros.j2, !!python/unicode '/posts/2010/05/removing-thematic-comments-from-single-post.html',
-  !!python/unicode 'posts/2008/11/self-reliance.html', listing.j2, !!python/unicode '/posts/2010/05/amazing-list-of-articles-for-centos-setup.html',
-  !!python/unicode 'posts/2010/05/magento-install-on-centos-5-3-rackspace-cloud.html',
-  base.j2, !!python/unicode 'posts/2010/05/removing-thematic-comments-from-single-post.html',
-  !!python/unicode 'posts/2010/04/red-hatcentosfedora-display-release-info.html',
-  blog.j2, analytics.j2, !!python/unicode 'posts/2010/05/amazing-list-of-articles-for-centos-setup.html',
+!!python/unicode 'posts/index.html': [!!python/unicode '/posts/2010/12/how-to-scrobble-pandora-to-last-fm.html',
+  !!python/unicode 'posts/2010/07/magento-1-4-contact-form-error-unable-to-submit-your-request-please-try-again-later.html',
+  !!python/unicode 'posts/2010/10/get-all-files-from-ftp-recursively-to-another-linux-server.html',
   !!python/unicode '/posts/2010/05/magento-install-on-centos-5-3-rackspace-cloud.html',
-  !!python/unicode 'posts/2009/04/a-mossocom-review.html', !!python/unicode '/posts/2009/01/valley-peaks-web-series.html',
-  !!python/unicode '/posts/2010/01/apple-ipad.html', !!python/unicode '/posts/2010/03/redhat-5-install-screen-goes-black.html',
-  !!python/unicode 'posts/2009/01/valley-peaks-web-series.html', !!python/unicode '/posts/2009/04/a-mossocom-review.html',
-  !!python/unicode 'posts/2010/05/centos-opening-port-80-for-service-httpd.html',
-  !!python/unicode '/posts/2010/01/pretty-amazing-video.html', !!python/unicode '/posts/2010/04/red-hatcentosfedora-display-release-info.html',
+  !!python/unicode '/posts/2010/09/wireless-setup-on-the-asus-ul30v-series.html',
+  !!python/unicode 'posts/2010/01/pretty-amazing-video.html', !!python/unicode '/posts/2010/11/zimbra-desktop-error-failed-to-execute-child-process-optzimbrazdesktoplinuxprismzdclient.html',
+  !!python/unicode 'posts/2010/03/redhat-5-install-screen-goes-black.html', !!python/unicode 'posts/2011/02/linux-find-command-broken-down.html',
+  !!python/unicode 'posts/2011/03/single-user-mode-red-hat-enterprise-linux-6-0-and-passwd-problems.html',
+  macros.j2, !!python/unicode '/posts/2010/10/get-all-files-from-ftp-recursively-to-another-linux-server.html',
+  !!python/unicode '/posts/2011/01/using-postmarkapp-api-with-kohana-3.html', listing.j2,
+  !!python/unicode 'posts/2010/01/apple-ipad.html', !!python/unicode '/posts/2011/03/red-hat-6-which-semanage-no-semanage-in.html',
+  !!python/unicode '/posts/2010/05/removing-thematic-comments-from-single-post.html',
+  !!python/unicode '/posts/2011/02/linux-find-command-broken-down.html', !!python/unicode '/posts/2010/07/backing-up-mysql-database-to-rackspace-cloud-files-on-centos-5-4.html',
+  !!python/unicode 'posts/2011/03/configure-a-caching-only-name-server-to-forward-dns-queries.html',
+  !!python/unicode '/posts/2010/07/lewis-moorman-speaks-at-ocon-2010-about-openstack.html',
+  !!python/unicode 'posts/2010/07/lewis-moorman-speaks-at-ocon-2010-about-openstack.html',
+  !!python/unicode 'posts/2010/05/magento-install-on-centos-5-3-rackspace-cloud.html',
+  base.j2, analytics.j2, !!python/unicode 'posts/2010/04/red-hatcentosfedora-display-release-info.html',
+  !!python/unicode 'posts/2010/07/easy-mail-installation-centos.html', blog.j2, !!python/unicode 'posts/2008/11/self-reliance.html',
+  !!python/unicode 'posts/2010/05/removing-thematic-comments-from-single-post.html',
+  !!python/unicode 'posts/2010/11/lamp-setup-on-ubuntulinux-mint.html', !!python/unicode '/posts/2010/05/amazing-list-of-articles-for-centos-setup.html',
+  !!python/unicode 'posts/2010/05/amazing-list-of-articles-for-centos-setup.html',
+  !!python/unicode 'posts/2011/03/register-red-hat-enterprise-linux-6-1-beta.html',
+  !!python/unicode '/posts/2011/03/register-red-hat-enterprise-linux-6-1-beta.html',
+  !!python/unicode 'posts/2009/04/a-mossocom-review.html', !!python/unicode 'posts/2010/11/zimbra-desktop-error-failed-to-execute-child-process-optzimbrazdesktoplinuxprismzdclient.html',
+  !!python/unicode '/posts/2011/01/installing-php-5-3-x-on-centos-5-5.html', !!python/unicode '/posts/2010/11/lamp-setup-on-ubuntulinux-mint.html',
+  !!python/unicode '/posts/2010/10/setting-up-ssh-key-authentication-centosfedora.html',
+  !!python/unicode 'posts/2011/01/installing-php-5-3-x-on-centos-5-5.html', !!python/unicode 'posts/2010/10/setting-up-ssh-key-authentication-centosfedora.html',
+  !!python/unicode 'posts/2010/09/installing-adobe-air-on-fedora-13.html', !!python/unicode '/posts/2010/01/apple-ipad.html',
+  !!python/unicode '/posts/2010/03/redhat-5-install-screen-goes-black.html', !!python/unicode 'posts/2009/01/valley-peaks-web-series.html',
+  !!python/unicode '/posts/2010/07/easy-mail-installation-centos.html', !!python/unicode 'posts/2010/07/backing-up-mysql-database-to-rackspace-cloud-files-on-centos-5-4.html',
+  !!python/unicode 'posts/2011/03/red-hat-6-which-semanage-no-semanage-in.html', !!python/unicode 'posts/2010/05/centos-opening-port-80-for-service-httpd.html',
+  !!python/unicode '/posts/2011/03/configure-a-caching-only-name-server-to-forward-dns-queries.html',
+  !!python/unicode 'posts/2010/09/wireless-setup-on-the-asus-ul30v-series.html', !!python/unicode 'posts/2011/01/using-postmarkapp-api-with-kohana-3.html',
+  !!python/unicode '/posts/2011/03/single-user-mode-red-hat-enterprise-linux-6-0-and-passwd-problems.html',
+  !!python/unicode '/posts/2010/04/red-hatcentosfedora-display-release-info.html',
+  !!python/unicode 'posts/2010/12/how-to-scrobble-pandora-to-last-fm.html', !!python/unicode '/posts/2010/09/installing-adobe-air-on-fedora-13.html',
   !!python/unicode '/posts/2010/05/centos-opening-port-80-for-service-httpd.html',
-  !!python/unicode 'posts/2008-11-27-self-reliance.html']
+  !!python/unicode '/posts/2010/07/magento-1-4-contact-form-error-unable-to-submit-your-request-please-try-again-later.html']
 !!python/unicode 'posts/meta.yaml': [blog.j2, !!python/unicode 'posts/2008/11/self-reliance.html',
   !!python/unicode 'posts/2010/05/removing-thematic-comments-from-single-post.html',
   !!python/unicode 'posts/2009/04/a-mossocom-review.html', !!python/unicode 'posts/2010/01/pretty-amazing-video.html',
@@ -134,19 +202,35 @@
 !!python/unicode 'posts/tags/videos.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'posts/tags/wordpress.html': [macros.j2, base.j2, tagged_posts.j2,
   analytics.j2]
+!!python/unicode 'tags/adobe.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/angry.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'tags/apache.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'tags/bind.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/centos.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'tags/fedora.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'tags/find.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'tags/ftp.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/happy.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/hosting.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/iptables.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'tags/kohana.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/linux.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/magento.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'tags/music.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'tags/mysql.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'tags/openstack.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'tags/pandora.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/php.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'tags/postfix.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'tags/postmark.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/rackspace.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/random.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/redhat.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/sad.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'tags/ssh.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/thematic.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/thoughts.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'tags/ubuntu.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/videos.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'tags/wireless.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/wordpress.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]

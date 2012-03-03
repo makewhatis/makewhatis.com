@@ -1,0 +1,16 @@
+---
+title: Red Hat 6 # /usr/bin/which: no semanage in
+created: !!timestamp '2011-03-14 00:00:00'
+tags:
+    - redhat
+    - linux
+---
+{% mark excerpt %}
+So I was buckling down for the RHCE today and getting into knee deep into
+SELinux, when I ran across a little hurdle. I was trying to use
+`semanage` and was not able to find the binary. Everything pointed
+back to the `policycoreutils` package, which was already installed.
+Turns out you actually have to install `policycoreutils-python` in
+order to get the `semanage` binary. I would think it would be a little
+less cryptic than that, but whatever.
+{% endmark -%}

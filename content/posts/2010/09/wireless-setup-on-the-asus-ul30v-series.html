@@ -1,0 +1,33 @@
+---
+title: Wireless Setup on the ASUS UL30V Series
+created: !!timestamp '2010-09-18 00:00:00'
+tags:
+    - fedora
+    - linux
+    - wireless
+---
+{% mark excerpt -%}
+
+I recently purchased an ASUS UL30V laptop, 13.3" machine. For some oddball
+reason the wireless rate defaulted to 1mb/s, which makes for an awful online
+experience. How did I find this? Took a minute to figure out what was going on
+with this, but looking closely at the output of the iwconfig command showed me
+"Bit Rate=54 Mb/s" for the wlan0 device. A quick fix. 
+
+{% endmark -%}
+
+Run: 
+
+
+    iwconfig wlan0 rate 54M [/cc] 
+
+This took care of the problem and cleared my connection. But wait.... when I 
+reboot the rate resets to 1Mb/s again. The previous command was not persistent 
+through a reboot, therefore I would have to run this command everytime I connect. 
+Thank God for simple automation though. I added the following lines to my **/etc/rc.local**
+ file. 
+
+    ifconfig wlan0 up iwconfig wlan0 rate 54M 
+
+
+And wabam! Everytime I boot up this sweet little machine, I connect with normal speeds.

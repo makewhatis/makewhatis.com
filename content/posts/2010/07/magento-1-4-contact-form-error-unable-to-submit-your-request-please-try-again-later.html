@@ -1,0 +1,47 @@
+---
+title: Magento 1.4 Contact Form Error&#58; Unable to submit your request.
+created: !!timestamp '2010-07-31 00:00:00'
+tags:
+    - magento
+    - php
+---
+{% mark excerpt -%}
+After successfully setting up Magento on Centos 5.4, and installing the theme
+we developed for our client, I was still running into a problem with the
+contact form. Every time I submitted a contact request, I received this
+generic error: **Unable to submit your request. Please, try again
+later**
+{% endmark -%}
+First off, I had to check my server and make sure that *postfix* was 
+running and installed correctly. I examined `/etc/postfix/main.cf`
+to make sure my settings were correct from my installation. Since all the settings 
+were correct, and I was able to send a mail from the command line, I then looked 
+at my php configuration to make sure the mail() function was working correctly. 
+In order to test the mail function I uploaded a simple mail script: 
+
+    mail('admin@domain.com', 'Test email using PHP', 'This is a test email
+    message', 'From:admin@domain.com','admin@domain.com');
+
+This script worked fine and mail was sent out successfully to me. This narrowed
+it down to an issue with Magento itself, and most likely the base theme that we had
+developed it from. A little research on the old Google, and I ran across this
+article at [screencastworld.com](http://screencastworld.com/2010/03/articles/magento-
+commerce-1-4-how-to-fix-unable-to-submit-your-request-please-try-again-
+later%E2%80%99-on-the-contact-us-form#xE2;-on-the-contact-us-
+form) The Magento form was failing due to validation
+errors from `/app/code/core/Mage/Contacts/controllers/IndexController.php`
+Magento was trying to validate the "hideit" field, which did not exist in our
+form. 
+
+    if (Zend_Validate::is(trim($post['hideit']), 'NotEmpty'))
+    { $error = true; } 
+
+
+So I just had to go into my form and add this line right above the submit button: 
+
+
+    <input type="text" style="display: none ! important;" value="" id="hideit" name="hideit">
+
+That's it, the form now works fine with that hidden field added. Weird problem
+and a bit of a headache to solve, but hopefully you ran across this article
+before it drove you too crazy.

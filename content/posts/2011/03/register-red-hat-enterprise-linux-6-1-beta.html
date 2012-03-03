@@ -1,0 +1,28 @@
+---
+title: Register Red Hat Enterprise Linux 6.1 Beta 
+created: !!timestamp '2011-03-22 00:00:00'
+tags:
+    - redhat
+    - linux
+---
+{% mark excerpt %}
+I was given a number of subscriptions from Redhat for the 6.1 Beta release.
+Tonight was the first time I tried to use one, to setup a learning environment
+for my brother here. I did not install this with a desktop, so I did not have
+the option of choosing to register from `System->Administration->RHN
+Registration`. So naturally I tried to type: 
+
+    rhn_register
+
+
+This took me to the register utility tui, but did not let me register the system. {% endmark -%} I kept
+getting errors about the not having any valid entitlements. So then I actually
+read through the entire email and saw that they had included this with the
+Beta info, that `rhn_register` will not work. The new command for this in 6.1 is
+as follows: 
+
+    subscription-manager register --username myusername --password '*************' 
+
+    subscription-manager subscribe --username myusername --password '*************' 
+
+Personally, I liked `rhn_register`, but whatever. Its all the same I supposed.

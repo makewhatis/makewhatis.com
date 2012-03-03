@@ -1,0 +1,36 @@
+---
+title: Linux find command, broken down
+created: !!timestamp '2011-02-19 00:00:00'
+tags:
+    - find
+    - linux
+---
+{% mark excerpt %}
+
+If you don't know how to use find, or have never experienced its goodness,
+then you are missing out. I avoided crazy commands like this when I first
+started making the switch from windows to linux because they were sort of
+intimidating. When you get down to it, its actually pretty straightforward.
+Base command is just "find" which makes sense. After that there is a whole
+world of switches (options) to use, but I will only brush on a few of them.
+Here is an example that is used all the time. You want to find a file in your
+home directory. We do this in the format "find [PATH] [OPTIONS] [FILENAME]"
+{% endmark -%}
+
+    find /home/user/ -type f -name ".bashrc"
+
+This will initiate a search of the /home/user/ directory looking for the .bashrc file.
+To find a file, case insensitive, created by a user in /home/. 
+
+    find /home/ -iname 'gopher.txt' 
+
+This will return Gopher.txt and gopher.txt, should they both exist. Lets say you want
+to find all files that are less than 1 day old. Maybe someone changed a file in
+your website and you need to find out which one to fix it.
+
+    find /var/www/ -type f -mtime -1
+
+Try it out. If any files have been modified less than 24 hours ago, they will show up. 
+You could also reverse that and do +1 to find all files that have been modified over 24 ago.
+
+I will add more to this post, just short on time at the moment.

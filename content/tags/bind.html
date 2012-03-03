@@ -1,0 +1,10 @@
+---
+extends: false
+listable: false
+
+---
+
+{% set tag = site.tagger.tags['bind'] %}
+{% set source = site.content.node_from_relative_path('posts') %}
+{% set walker = source['walk_resources_tagged_with_bind'] %}
+{% extends "tagged_posts.j2" %}

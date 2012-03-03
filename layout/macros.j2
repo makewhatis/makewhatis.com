@@ -17,7 +17,7 @@
             {% for tag in res.meta.tags %}
                 <a class="small" href="{{ content_url('tags/'~tag~'.html') }}">
                 {{ tag }}
-                </a>
+                </a>&nbsp; 
             {% endfor %}
     {% endif %}
     {{ post.excerpt|markdown|typogrify }}

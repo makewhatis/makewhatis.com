@@ -8,10 +8,10 @@
     </div>
 </div>    
     <ul class="excerpt">
-        {% from "macros.j2" import render_excerpt with context  %}
-        {% for res in walker() %}
-            {{ render_excerpt(res) }}
-        {% endfor %}
+    {% from "macros.j2" import render_excerpt with context  %}
+    {% for res in walker() %}
+        {{ render_excerpt(res) }}
+    {% endfor %}
     </ul>
 </section>
 {% endblock %}
