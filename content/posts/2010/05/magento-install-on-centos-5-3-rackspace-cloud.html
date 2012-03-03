@@ -1,0 +1,131 @@
+---
+title: Magento Install on Centos 5.3 (Rackspace Cloud)
+created: !!timestamp '2010-05-13 00:00:00'
+tags:
+    - magento
+    - php
+    - rackspace
+---
+
+    {% mark excerpt -%}
+
+I recently took on the job of setting up a Magento install on Centos 5.3. I
+had originally played around with Ubuntu 9.1 for the job because I wanted the
+latest and greatest package support. After reading around and installing on
+both platforms, I decided to go with Centos for stability and security. Being
+more comfortable with the RedHat platform it worked out better for me. Like
+every other install I have jumped into, there was no "one" guide that covered
+everything. I am making my own guide, a detailed step by step process of how I
+installed Magento 1.4.0.1 on my newly provisioned Rackspace Cloud Server
+running CentOS 5.3 64bit.
+
+    {% endmark -%}
+
+### Update Server
+
+First thing after the provision was to update the OS with all the latest packages: 
+
+    yum update
+
+
+_install vim-enhanced_
+
+I enjoy using vim the most, as far as console text editors. So optionally install this package as it is not included in the
+default install here. 
+
+
+    yum install vim-enhanced.x86_64
+
+
+### Install Apache/Zend Server/php 5.3/Mysql 5.1
+
+I found the easiest way to get all the dependencies for Magento was to just run Zend Server on top of
+Apache. So next I added the Zend Repo: 
+
+    
+    vim /etc/yum.repos.d/zend.repo
+    
+
+    [Zend] name=Zend Server
+    baseurl=http://repos.zend.com/zend-server/rpm/$basearch enabled=1 gpgcheck=0
+    [Zend_noarch] name=Zend Server - noarch baseurl=http://repos.zend.com/zend-
+    server/rpm/noarch enabled=1 gpgcheck=0 
+    
+
+Next I installed Zend Server with PHP 5.3 
+
+    
+    yum install zend-server-ce-php-5.3
+    
+
+The install of CentOS that I started with came with a locked down firewall, so I had to
+add a firewall exception to the /etc/sysconfig/iptables 
+
+    
+    vim /etc/sysconfig/iptables
+    
+
+Add the following rule about the REJECT rules:
+
+    
+    -A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT 
+    
+Save the file and restart IPTables 
+
+    
+    /etc/init.d/iptables restart 
+    
+
+In order to get MySQL 5.1 on CentOS I had to enable the Remi Repo, since there is no 
+official CentOS release at this time. In order to accomplish this I used the following commands: 
+
+    
+    wget http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-3.noarch.rpm
+    wget http://rpms.famillecollet.com/el5.i386/remi-release-5-7.el5.remi.noarch.rpm 
+    rpm -Uvh remi-release-5\*.rpm epel-release-5\*.rpm 
+    
+
+Those commands added a remi.repo file to my
+/etc/yum.repos.d/ folder. This will allow install the latest version of MySQL
+via yum. 
+
+
+    yum --enablerepo=remi install mysql-5.1.46-1.el5.remi mysql-server-5.1.46-1.el5.remi 
+    yum --enablerepo=remi install php-mysql php-pdo 
+
+
+### Install Magento
+ 
+Now that the server is ready to run Magento, we can download and install. 
+
+There are two ways to do this, with the downloader or manually with the full package. I
+used the full package and just uploaded the folder to my server. Once I had the files 
+on my server and extracted into the appropriate directory, I ran the chgrp command to give
+ownership to the apache group. 
+
+
+    chgrp apache app
+    chgrp apache downloader
+    chgrp apache js
+    chgrp apache lib
+    chgrp apache media
+    chgrp apache pkginfo
+    chgrp apache report
+    chgrp apache skin
+    chgrp apache var 
+
+
+And even with the awful reputation chmod 777 has, magento requires that we chmod
+certain directories in order for it to run the install. 
+
+
+    chmod 777 /app/etc 
+    chmod 777 /media/downloader
+    chmod 777 /media/import
+    chmod 777 /var 
+
+
+Now we can finally run the install by simply going to the our
+servers main url. There are so many other things that can be configured and
+setup in order to optimize a server running Magento, but this was just a brief
+walkthrough of a basic setup. Hope this helps somebody.

@@ -15,7 +15,7 @@
     in categories &nbsp; 
     {% if res.meta.tags %}      
             {% for tag in res.meta.tags %}
-                <a class="small" href="{{ content_url('posts/tags/'~tag~'.html') }}">
+                <a class="small" href="{{ content_url('tags/'~tag~'.html') }}">
                 {{ tag }}
                 </a>
             {% endfor %}

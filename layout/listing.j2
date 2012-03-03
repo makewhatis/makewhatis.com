@@ -13,7 +13,7 @@
 {% if res.meta.tags %}
  with tags
     {% for tag in res.meta.tags %}
-    <a href="{{ content_url('posts/tags/'~tag~'.html') }}" rel="tag">{{ tag }}</a>
+    <a href="{{ content_url('tags/'~tag~'.html') }}" rel="tag">{{ tag }}</a>
     {% endfor %}
 {% endif %}
 
@@ -30,30 +30,19 @@
 </div>
 {% endfor %}
 
-<nav class="pagenavi">
-<a class="next{{' disabled' if not resource.page.next }}"
-    {% if resource.page.next %}
-    href="{{ content_url(resource.page.next.resource.url) }}"{% endif %}>
-    Older &laquo;
+<div class="content-padding">
+<nav class="pagination">
+
+{% if resource.page.next %}
+<a class="next" href="{{ content_url(resource.page.next.resource.url) }}">
+    Older
 </a>
-<a class="prev{{' disabled' if not resource.page.previous }}"
-    {% if resource.page.previous %}
-    href="{{ content_url(resource.page.previous.resource.url) }}"{% endif %}>
-    Newer &raquo;
+{% endif %}
+{% if resource.page.previous %}
+<a class="prev" href="{{ content_url(resource.page.previous.resource.url) }}">
+    Newer
 </a>
+{% endif %}
 </nav>
+</div>
 {%- endblock %}
-<div class="content-padding"> 
-                            <h1 class="page-title">The Blog</h1>
-                        </div>
-                            
-                        <a href="blog-single.html"><img src="images/demo/blog-post.jpg" width="500" height="200" alt="" /></a>
-                        <div class="content-padding"> 
-                            <div class="comments"><a href="blog-single.html#comments">12</a></div>
-                            <h2><a href="blog-single.html">Starting with HTML5</a></h2>
-                        </div><!-- close .content-padding -->
-                        <div class="post-details">By <a href="#">ProgressionStudios</a> @ 07/27/2011 in categories <a href="#">coding</a>, <a href="#">news</a></div><!-- close .post-details -->
-                        <div class="content-padding"> 
-                            <p>With HTML 5 starting to appear more my question is should I be using html 5 for commercial client work even though it hasn't officially been set as the standard? With HTML 5 starting to appear more my question is should I be using html 5 for commercial client work even though it hasn't officially been set as the standard?</p>
-                            <a href="blog-single.html" class="button">Read More</a>
-                        </div><!-- close .content-padding -->

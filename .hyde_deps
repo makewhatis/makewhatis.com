@@ -24,10 +24,11 @@
   analytics.j2]
 !!python/unicode 'excerpts.xml': [atom.j2, macros.j2]
 !!python/unicode 'index.html': [blog.j2, !!python/unicode 'posts/2008/11/self-reliance.html',
-  !!python/unicode 'posts/2010/05/removing-thematic-comments-from-single-post.html',
-  listing.j2, !!python/unicode 'posts/2009/04/a-mossocom-review.html', !!python/unicode 'posts/2010/01/pretty-amazing-video.html',
-  base.j2, analytics.j2, !!python/unicode 'posts/2010/03/redhat-5-install-screen-goes-black.html',
-  macros.j2, !!python/unicode 'posts/2010/04/red-hatcentosfedora-display-release-info.html',
+  analytics.j2, listing.j2, !!python/unicode 'posts/2009/04/a-mossocom-review.html',
+  !!python/unicode 'posts/2010/01/pretty-amazing-video.html', !!python/unicode 'posts/2010/05/magento-install-on-centos-5-3-rackspace-cloud.html',
+  base.j2, !!python/unicode 'posts/2010/05/removing-thematic-comments-from-single-post.html',
+  !!python/unicode 'posts/2010/03/redhat-5-install-screen-goes-black.html', macros.j2,
+  !!python/unicode 'posts/2010/04/red-hatcentosfedora-display-release-info.html',
   !!python/unicode 'posts/2009/01/valley-peaks-web-series.html', !!python/unicode 'posts/2008-11-27-self-reliance.html',
   !!python/unicode 'posts/2010/01/apple-ipad.html']
 !!python/unicode 'media/css/autumn.css': []
@@ -67,6 +68,8 @@
   macros.j2, base.j2, analytics.j2]
 !!python/unicode 'posts/2010/04/red-hatcentosfedora-display-release-info.html': [
   blog.j2, macros.j2, base.j2, analytics.j2]
+!!python/unicode 'posts/2010/05/magento-install-on-centos-5-3-rackspace-cloud.html': [
+  blog.j2, macros.j2, base.j2, analytics.j2]
 !!python/unicode 'posts/2010/05/removing-thematic-comments-from-single-post.html': [
   blog.j2, macros.j2, base.j2, analytics.j2]
 !!python/unicode 'posts/2010/20100119-pretty-amazing-video.html.markdown': [blog.j2,
@@ -92,11 +95,13 @@
 !!python/unicode 'posts/angry-post.html': [blog.j2, macros.j2, base.j2, analytics.j2]
 !!python/unicode 'posts/happy-post.html': [blog.j2, macros.j2, base.j2, analytics.j2]
 !!python/unicode 'posts/index.html': [blog.j2, !!python/unicode 'posts/2008/11/self-reliance.html',
-  !!python/unicode 'posts/2010/05/removing-thematic-comments-from-single-post.html',
-  listing.j2, !!python/unicode '/posts/2010/05/removing-thematic-comments-from-single-post.html',
+  analytics.j2, listing.j2, !!python/unicode '/posts/2010/05/removing-thematic-comments-from-single-post.html',
   !!python/unicode 'posts/2009/04/a-mossocom-review.html', !!python/unicode 'posts/2010/01/pretty-amazing-video.html',
-  !!python/unicode '/posts/2010/01/pretty-amazing-video.html', base.j2, !!python/unicode '/posts/2010/04/red-hatcentosfedora-display-release-info.html',
-  analytics.j2, !!python/unicode '/posts/2010/01/apple-ipad.html', !!python/unicode 'posts/2010/03/redhat-5-install-screen-goes-black.html',
+  !!python/unicode '/posts/2010/05/magento-install-on-centos-5-3-rackspace-cloud.html',
+  !!python/unicode 'posts/2010/05/magento-install-on-centos-5-3-rackspace-cloud.html',
+  base.j2, !!python/unicode '/posts/2010/04/red-hatcentosfedora-display-release-info.html',
+  !!python/unicode 'posts/2010/05/removing-thematic-comments-from-single-post.html',
+  !!python/unicode '/posts/2010/01/apple-ipad.html', !!python/unicode 'posts/2010/03/redhat-5-install-screen-goes-black.html',
   macros.j2, !!python/unicode 'posts/2010/04/red-hatcentosfedora-display-release-info.html',
   !!python/unicode 'posts/2009/01/valley-peaks-web-series.html', !!python/unicode '/posts/2010/03/redhat-5-install-screen-goes-black.html',
   !!python/unicode 'posts/2008-11-27-self-reliance.html', !!python/unicode 'posts/2010/01/apple-ipad.html']
@@ -122,6 +127,9 @@
 !!python/unicode 'tags/happy.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/hosting.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/linux.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'tags/magento.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'tags/php.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
+!!python/unicode 'tags/rackspace.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/random.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/redhat.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'tags/sad.html': [macros.j2, base.j2, tagged_posts.j2, analytics.j2]
