@@ -44,57 +44,9 @@
   <div id="container">
       {% block container %}
       <div id="main" role="main">
-          <aside>
-            <div id="sidebar-top">
-              <div id="sidebar-top-right"></div>
-            </div><!-- close #sidebar-top -->
-
-            <div id="sidebar-container-bg-left">
-              <div id="sidebar-container-bg-right">
-                <div id="sidebar-container">
-              <header>
-              {% block header -%}
-                  <h1 class="page-title"><a class="title" href="/" title="makewhatis&amp;" >
-                  makewhatis&amp;</a></h1>
-              {%- endblock %}                
-                </header>
-          {% block nav %}
-          {% from "macros.j2" import render_nav with context %}
-          {{ render_nav(menu, ['sf-menu', 'sf-vertical']) }}
-          {% endblock %}                
-                
-                <!-- <hr /> DIVIDER -->
-                
-                <div class="content-padding">
-                  <h2 class="twitter-heading">Latest Tweets</h2>
-                  <div id="tweets-sidebar"><div class="clearfix"></div></div>
-                  <a href="http://twitter.com/makewhatis/" target="_blank" class="button">Follow on Twitter</a>
-                </div>
-                
-                
-                <!--hr />
-                <div class="content-padding">
-                  <h2 class="flickr-heading">Flickr Photos</h2>
-                  <div id="flickr-sidebar"></div>
-                  <div class="clearfix"></div>
-                </div--><!-- close .content-padding -->
-                <div class="content-padding">
-                                        {% block sidebar %}
-              {% include "sidebar.j2" %}
-            {% endblock sidebar %}
-</div>
-                <div class="clearfix"></div>
-                </div><!-- close #sidebar-container -->
-              </div><!-- close #sidebar-container-bg-right" -->
-            </div><!-- close #sidebar-container-bg-left -->
-
-            <div id="sidebar-bottom">
-              <div id="sidebar-bottom-right"></div>
-
-            </div><!-- close #sidebar-bottom -->
-        </aside><!-- SIDEBAR CLOSED -->
-
-
+        {% block sidebar %}
+          {% include "sidebar.j2" %}
+        {% endblock sidebar %}
         <div id="content">
           <div id="content-top">
             <div id="content-top-right"></div>
