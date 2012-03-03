@@ -1,48 +1,29 @@
 {% extends "base.j2" %}
-
 {% block main -%}
-<div class="content-padding"> 
-    <h1 class="page-title">The Blog</h1>
-</div>
-{% for res in resource.page.posts %}
-<div class="content-padding"> 
-<h2 class="title"><a href="{{ content_url(res.url) }}" title="{{ res.meta.title }}">{{ res.meta.title }}</a></h2>
-
-<div class="post-details">
- Posted on {{ res.meta.created.strftime('%Y-%m-%d') }} 
-{% if res.meta.tags %}
- with tags
-    {% for tag in res.meta.tags %}
-    <a href="{{ content_url('tags/'~tag~'.html') }}" rel="tag">{{ tag }}</a>
+    <div class="content-padding"> 
+        <div class="content-padding-title"> 
+            <h1 class="page-title">The Blog</h1>
+        </div>
+    </div>
+    {% for res in resource.page.posts %}
+        <ul class="excerpt">
+            {% from "macros.j2" import render_excerpt with context  %}
+                {{ render_excerpt(res) }}
+        </ul>
     {% endfor %}
-{% endif %}
 
-  {% from "macros.j2" import render_share_button with context %}
-  {{ render_share_button(res) }}
-</div>
-
-<div class="content-padding"> 
-{% refer to res.url as article -%}
-{{ article.excerpt|markdown|typogrify }}
-</div>
-
-
-</div>
-{% endfor %}
-
-<div class="content-padding">
-<nav class="pagination">
-
-{% if resource.page.next %}
-<a class="next" href="{{ content_url(resource.page.next.resource.url) }}">
-    Older
-</a>
-{% endif %}
-{% if resource.page.previous %}
-<a class="prev" href="{{ content_url(resource.page.previous.resource.url) }}">
-    Newer
-</a>
-{% endif %}
-</nav>
-</div>
+    <div class="content-padding">
+        <nav class="pagination">
+            {% if resource.page.previous %}
+                <a class="prev" href="{{ content_url(resource.page.previous.resource.url) }}">
+                    Newer
+                </a>
+            {% endif %}
+            {% if resource.page.next %}
+                <a class="next" href="{{ content_url(resource.page.next.resource.url) }}">
+                    Older
+                </a>
+            {% endif %}
+        </nav>
+    </div>
 {%- endblock %}

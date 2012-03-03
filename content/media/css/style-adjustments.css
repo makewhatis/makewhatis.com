@@ -46,8 +46,12 @@ aside {width:312px;} /* Add 32px of padding to the width so default is actually 
 /*
 =============================================== Link Colors ===============================================================
 */
-#page-title a { text-decoration: none;}
-#page-title a:hover { text-decoration: none;}
+
+h1 a:hover { text-decoration: none; color: #D2D2D2;}
+.title { text-decoration: none; color:#4AB1D3;}
 a.backlink {font-size: 20px; line-height: 32px; margin-bottom: 7px; margin-top: 7px;}
 
- .disabled a:hover {text-decoration:none;} /* Default link:hover*/
+
+
+.disabled a:hover {text-decoration:none;} /* Default link:hover*/
+ul, ol { margin-left: 0; margin-bottom:20px; }

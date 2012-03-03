@@ -2,13 +2,16 @@
 
 {% block main %}
 {{ super() }}
-<section class="archives">
-<h1 class="tag title">{{ tag.name }}</h1>
-<ul class="excerpt">
-    {% from "macros.j2" import render_excerpt with context  %}
-    {% for res in walker() %}
-        {{ render_excerpt(res) }}
-    {% endfor %}
-</ul>
+<div class="content-padding">
+    <div class="content-padding-title">
+        <h1 class="tag title">{{ tag.name }}</h1>
+    </div>
+</div>    
+    <ul class="excerpt">
+        {% from "macros.j2" import render_excerpt with context  %}
+        {% for res in walker() %}
+            {{ render_excerpt(res) }}
+        {% endfor %}
+    </ul>
 </section>
 {% endblock %}
