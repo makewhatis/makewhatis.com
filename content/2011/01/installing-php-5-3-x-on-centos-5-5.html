@@ -1,0 +1,54 @@
+---
+title: Installing PHP 5.3.x on Centos 5.5
+created: !!timestamp '2011-01-07 00:00:00'
+tags:
+    - centos
+    - linux
+    - php
+---
+{% mark excerpt %}
+Centos is a great Distro for hosting. Its tried and tested, as oppossed to
+Fedora and Ubuntu, which, while on the cutting edge, can still have a few
+quirks. My biggest problem with Centos is that lack for cutting edge, like the
+default PHP that installs with Centos, 5.1. It can be a pain to find 3rd party
+repos. Well hopefully thats where you are. Looking for 5.3 on Centos. One of
+the most solid repos out there is <a
+href="http://iuscommunity.org/">http://iuscommunity.org/</a>. I'll run through
+how to get that version of php you want on your server. 
+
+{% endmark -%}
+This assumes you have no php installed at this point. If you do, back up and remove it. Once you are ready:
+
+You have to add the Epel repo first, so run these two commands as root: 
+    
+    wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/epel-release-1-1.ius.el5.noarch.rpm rpm -Uvh epel-release-1-1.ius.el5.noarch.rpm
+    # Now lets add the IUS Community Repo 
+    wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/ius-release-1.0-6.ius.el5.noarch.rpm rpm -Uvh ius-release-1.0-6.ius.el5.noarch.rpm
+
+This will add the repos to your /etc/yum.repos.d/ directory. Now to go
+into the .repo file and make a few changes. The repo configuration file by
+default is configured to hit the mirrorlist. Lets set the base url and make
+sure the repo is enabled. First comment out the "mirrorlist=http" line in the
+main ius repo, and then make sure "enable=1". The first section of your
+ius.repo should look like this: 
+
+    [ius] 
+    name=IUS Community Packages for Enterprise Linux 5 - $basearch
+    baseurl=http://dl.iuscommunity.org/pub/ius/stable/Redhat/5.5/$basearch
+    #mirrorlist=http://dmirr.iuscommunity.org/mirrorlist?repo=ius-el5&arch=$basearch
+    failovermethod=priority
+    enabled=1
+    gpgcheck=1
+    gpgkey=file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY
+
+Awesome. Now the was IUS does things, is they name php based on version, so php 5.3 is php53u
+and if you wanted 5.2 it would just be php52. An easy way to check, would be
+do a yum list: 
+
+    yum list php53u
+
+Or to see all php53u packages: 
+
+    yum list php53u*
+
+Now just yum install the packages you need and you'll be running on a fresh version of php 5.3.

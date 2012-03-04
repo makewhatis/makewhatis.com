@@ -1,0 +1,43 @@
+---
+title: Centos 5.4 | Opening Port 80 for service httpd
+created: !!timestamp '2010-05-25 00:00:00'
+tags:
+    - centos
+    - redhat
+    - linux
+    - iptables
+---
+
+{% mark excerpt -%}
+
+On a new fresh slice at the Rackspace Cloud, you will find that, by default,
+there is a firewall blocking everything but port 22, for ssh. When you try to
+install and start Apache, nothing happens. The firewall is blocking any
+incoming http connections to our server. 
+
+{% endmark -%}
+
+The first thing that you do is setup a rule to allow connections over port 80 
+in your IPtables file. 
+
+    ~]# vim /etc/sysconfig/iptables 
+
+Add the following line somewhere above the last REJECT line (I put mine right 
+below my port 22 rule.)
+
+    -A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+
+Once you do this, all that is left is to restart iptables. 
+
+    ~]# /etc/init.d/iptables restart
+
+...and if you haven't done so already, start apache and set chkconfig on so that it the
+service starts on boot.
+
+    ~]# sudo /etc/init.d/httpd start
+
+then... 
+
+    ~]# sudo /sbin/chkconfig httpd on 
+
+Hope that helps somebody.

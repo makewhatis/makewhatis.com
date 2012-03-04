@@ -1,0 +1,156 @@
+---
+title: Using Postmark API with Kohana 3
+created: !!timestamp '2011-01-05 00:00:00'
+tags:
+    - postmark
+    - kohana
+    - php
+---
+{% mark excerpt %}
+Postmark gives API access to their service, which rocks. People have been kind
+enought to develop libraries to access the API as well. There is a lot of info
+out there on different implementations of the API, but none that I could find
+specifically for Kohana 3. So I threw together a little post for it. I had to
+work with Postmark and Kohana 3 this past week. There is no library for Kohana
+3 alone, but there is a nifty one for php. Ill run through an example of how
+to implement that library into a Kohana 3 application.
+
+{% endmark -%}
+
+ So first we have to import the library into our application. First create a directory in
+called "vendors", so "application/vendors". Create another directory inside
+vendors for postmarkapp. Download postmark php library from Github and place
+those files in the application/vendors/postmarkapp directory. 
+
+
+<a href="https://github.com/Znarkus/postmark-php">https://github.com/Znarkus
+/postmark-php</a> 
+Also, if you haven't signed up with postmark, you will want to do that. <a href="http://postmarkapp.com/">http://postmarkapp.com/</a> 
+Now that thats in place, next step is to actually tell Kohana that we are using
+that library, and where to find it. In the application/bootstrap.php add this
+line above the section that starts with "//-- Configuration and
+initialization" 
+
+    //import postmarkapp api
+    $path = Kohana::find_file('vendors', 'postmarkapp/Postmark');
+    if($path) {
+        ini_set('include_path',
+        ini_get('include_path') . PATH_SEPARATOR . dirname(dirname($path)));
+        require_once 'postmarkapp/Postmark.php';
+    }
+
+Awesome, now its ready to start using it. In whatever controller you want to
+use it in (I'm going to do it in my controller/main.php file) create a
+function to send mail. I am setting up some constants for postmark like From
+Name and From Email, as well as including the API key I got from Postmark. 
+
+    private function _email($email)
+    {
+        
+        define('POSTMARKAPP_API_KEY', '########-####-####-####-############');
+        define('POSTMARKAPP_MAIL_FROM_NAME', 'Test User');
+        define('POSTMARKAPP_MAIL_FROM_ADDRESS', 'no-reply@test.com');
+        
+        try
+        {
+            Mail_Postmark::compose()
+                    ->addTo($email['email'], $email['name'])
+                    ->subject('Congratulations')
+                    ->messagePlain('We have received your message!')
+                    ->send();
+                
+        }
+        catch(Exception $e )
+        {
+            echo $e->getMessage();
+        
+        }
+        return TRUE;
+
+    }
+
+
+ Now you have the function setup that does the heavy lifting for you.
+Typically you would call this function to send a confirmation or a submitted
+form. Below is a very simplified example. If nothing is posted yet, it loads
+the form which is in views/contact/form. If the form has posted, then it
+processes the data. Keep in mind I have done very little error handling and
+data filtering. Lots of good info on the unofficial wiki about that. <a
+href="http://kerkness.ca/wiki/doku.php">http://kerkness.ca/wiki/doku.php</a>
+
+
+    public function action_index()
+    {
+        if ($_POST)
+        {
+            // Logic for form handling, database entry, etc. I'm just covering the email part :-)
+            
+            $confirmation = $this->_email(array('email' => $_POST['email'], 'name' => $_POST['first_name']));
+            return $confirmation;
+        }           
+        $this->request->response = View::factory('contact/form');
+        
+    }
+
+ So all together the controller looks like: 
+
+defined('SYSPATH') or die('No direct script access.');
+    
+    class Controller_Main extends Controller
+    {
+        public function action_index()
+        {
+            if ($_POST)
+            {
+                // Logic for form handling, database entry, etc. I'm just covering the email part :-)
+            
+                $confirmation = $this->_email(array('email' => $_POST['email'], 'name' => $_POST['first_name']));
+                return $confirmation;
+            }
+        
+            $this->request->response = View::factory('contact/form');
+        
+        }
+        private function _email($email)
+        {
+            
+            define('POSTMARKAPP_API_KEY', '########-####-####-####-############');
+                define('POSTMARKAPP_MAIL_FROM_NAME', 'Test User');
+                define('POSTMARKAPP_MAIL_FROM_ADDRESS', 'no-reply@test.com');
+            
+            try
+            {
+                Mail_Postmark::compose()
+                        ->addTo($email['email'], $email['name'])
+                        ->subject('Congratulations')
+                        ->messagePlain('We have received your message!')
+                        ->send();
+                    
+            }
+            catch(Exception $e )
+            {
+                echo $e->getMessage();
+            
+            }
+            return TRUE;
+        
+        }
+    }
+
+
+Then in your View, located under views/contact/form: 
+
+    echo Form::open('main/index');
+    echo Form::label('First Name');
+    echo Form::input('first_name');
+    echo "<br />";
+    echo Form::label('email');
+    echo Form::input('email');
+    echo "<br />";
+    echo Form::label('message');
+    echo Form::textarea('message');
+    echo "<br />";
+    echo Form::submit('name', 'Submit');    
+    echo Form::close();
+
+ Hope that helps someone get going on using Postmark with their Kohana 3 application.

@@ -1,0 +1,23 @@
+---
+title: Single user mode Red Hat Enterprise Linux 6.0 and passwd problems
+created: !!timestamp '2011-03-21 00:00:00'
+tags:
+    - redhat
+    - linux
+---
+{% mark excerpt %}
+
+I was trying to show my little brother how to root a RHEL6 box in single user
+mode today, and ran into a little issue. I booted the machine into init 1, but
+was not able to change the password. I could add a user, but could not assign
+a password. You could type: 
+    
+    passwd root 
+
+and the cmd prompt would just appear on the next line, as if the command was just blank. 
+Then I remembered SELINUX, my old buddy. Disabled selinux: 
+
+    setenforce 0
+
+and bam! Password updated and life goes on.
+{% endmark -%}

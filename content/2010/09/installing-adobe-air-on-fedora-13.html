@@ -1,0 +1,38 @@
+---
+title: Installing Adobe Air on Fedora 13 
+created: !!timestamp '2010-09-03 00:00:00'
+tags:
+    - fedora
+    - adobe
+---
+
+{% mark excerpt -%}
+
+I sat down to setup a new box with FC 13 on it tonight. Everything went really
+smooth until I wanted to install Adobe Air applications on there. I kept
+getting this big fat error: 
+
+    [tom@tomhost Downloads]$ ./AdobeAIRInstaller.bin 
+    (setup:2351): Gtk-WARNING **: Unable to locate theme engine in module_path: "clearlooks", 
+    (setup:2351): Gtk-WARNING **: Unable to locate theme engine in module_path: "clearlooks", 
+    (setup:2351): Gtk-WARNING **: Unable to locate theme engine in module_path: "clearlooks",
+    (setup:2351): Gtk-WARNING **: Unable to locate theme engine in module_path: "clearlooks",
+    (setup:2351): Gtk-WARNING **: Unable to locate theme engine in module_path: "clearlooks",
+    (setup:2351): Gtk-WARNING **: Unable to locate theme engine in module_path: "clearlooks",
+    (setup:2351): Gtk-WARNING **: Unable to locate theme engine in module_path: "clearlooks",
+    (setup:2351): Gtk-WARNING **: Unable to locate theme engine in module_path: "clearlooks",
+    Gtk-Message: Failed to load module "pk-gtk-module": libpk-gtk-module.so: cannot open shared object file: No such file or directory
+    Gtk-Message: Failed to load module "canberra-gtk-module": libcanberra-gtk-module.so: cannot open shared object file: No such file or directory
+
+{% endmark -%}
+
+I finally found a series of guides that got me through it. The first one was this site, which got 
+me most of the way. 
+
+[http://www.if-not-true-then-false.com/2010/install-adobe-air-1-5-and-2-on-fedora-centos-and-red-hat-rhel/](http://www.if-not-true-then-false.com/2010/install-adobe-air-1-5-and-2-on-fedora-centos-and-red-hat-rhel/)
+
+
+Next one got me the rest of the way:
+[http://dnmouse.org/forum/viewtopic.php?f=3&t=8](http://dnmouse.org/forum/viewtopic.php?f=3&t=8)
+
+After installing all of those dependencies I was able to run the AdobeAir executable and install.
