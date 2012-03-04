@@ -1,3 +1,5 @@
 extends: blog.j2
 default_block: post
 listable: true
+110n:  
+    comments: "View or add a new comment (with Disqus)"
