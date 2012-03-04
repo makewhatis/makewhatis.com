@@ -1,29 +1,23 @@
 {% extends "base.j2" %}
 {% block main -%}
-    <div class="content-padding"> 
-        <div class="content-padding-title"> 
-            <h1 class="page-title">The Blog</h1>
-        </div>
-    </div>
+    <h2 class="page-title">The Blog</h2>
     {% for res in resource.page.posts %}
         <ul class="excerpt">
             {% from "macros.j2" import render_excerpt with context  %}
                 {{ render_excerpt(res) }}
         </ul>
     {% endfor %}
-
-    <div class="content-padding">
-        <nav class="pagination">
-            {% if resource.page.previous %}
-                <a class="prev" href="{{ content_url(resource.page.previous.resource.url) }}">
-                    Newer
-                </a>
-            {% endif %}
-            {% if resource.page.next %}
-                <a class="next" href="{{ content_url(resource.page.next.resource.url) }}">
-                    Older
-                </a>
-            {% endif %}
-        </nav>
-    </div>
+    <nav class="pagination">
+    {% if resource.page.previous %}
+        <a class="prev" href="{{ content_url(resource.page.previous.resource.url) }}">
+            Newer
+        </a>
+    {% endif %}
+    {% if resource.page.next %}
+        <a class="next" href="{{ content_url(resource.page.next.resource.url) }}">
+            Older
+        </a>
+    {% endif %}
+    </nav>
+    <hr>
 {%- endblock %}

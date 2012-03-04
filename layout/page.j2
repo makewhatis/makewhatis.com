@@ -1,13 +1,9 @@
 {% extends "base.j2" %}
 {% block main -%}
-<div class="content-padding">
-    <div class="content-padding-title">
-        <h2 class="title">
-            <a href="{{ content_url(resource.url) }}">
-                {{ resource.meta.title }}
-            </a>
-        </h2>
-    </div>
+    <h2 class="title">
+        <a href="{{ content_url(resource.url) }}">
+            {{ resource.meta.title }}
+        </a>
+    </h2>
     <p>{{ resource.meta.content}} </p>
-</div>
 {%- endblock %}

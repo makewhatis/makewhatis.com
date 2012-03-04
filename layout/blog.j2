@@ -1,13 +1,6 @@
 {% extends "base.j2" %}
 {% block main -%}
-<div class="content-padding">
-    <div class="content-padding-title">
-        <h2 class="title">
-            <a href="{{ content_url(resource.url) }}">
-                {{ resource.meta.title }}
-            </a>
-        </h2>
-    </div>
+    <h3>{{ resource.meta.title }}</h3>
     <div class="post-details">
     <time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}">
         Posted: {{ resource.meta.created.strftime('%a, %d %b %Y') }}
@@ -20,14 +13,11 @@
                 </a>&nbsp;
             {% endfor %}
     {% endif %}
-</div>
-<div class="content-padding">
     {% filter markdown|typogrify -%}
         {% mark post -%}
             {% block post -%}
             {%- endblock %}
         {%- endmark %}
     {%- endfilter %}
-</div>
 {% include "disqus.j2" %}
 {%- endblock %}
