@@ -1,0 +1,64 @@
+div.container {
+    padding-top: 60px;
+}
+nav {
+    position: relative;
+}
+nav ul {
+    margin: 20px 0;
+}
+nav ul li {
+    font-family: "Georgia","Times New Roman",Helvetica,Arial,sans-serif;
+    display: block;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+nav ul li a {
+    color: #555555;
+    text-decoration: none;
+}
+nav ul li a:hover, nav ul li a:focus, nav ul li a:active{
+    color: #222222;
+}
+header h1 {
+    font-family: "Georgia","Times New Roman",Helvetica,Arial,sans-serif;
+    font-size: 52px;
+    font-weight: normal;
+    letter-spacing: -1px;
+    line-height: 61px;
+}
+hr.large {
+    background: none repeat scroll 0 0 #EBEBEB;
+    border: medium none;
+    height: 8px;
+    margin: 50px 0;
+}
+div.doc-section {
+    margin: 30px 0;
+}
+#whatAndWhy .row {
+    padding: 30px 0 0;
+}
+#typography blockquote {
+    margin-top: 20px;
+}
+.hidden-code a {
+    color: #999999;
+    font-size: 12px;
+}
+.hidden-code > div {
+    display: none;
+}
+.resize {
+    display: none;
+}
+nav.pagination {
+    float: right;
+    margin-bottom: 20px;
+}
+nav.pagination a {
+    padding: 0 10px;
+}
+footer {
+    margin: 20px 0;
+}
