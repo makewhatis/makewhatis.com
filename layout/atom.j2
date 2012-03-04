@@ -28,7 +28,7 @@
             <published>{{ res.meta.created|xmldatetime }}</published>
             <id>{{ content_url(res.url) }}</id>
             {% for tag in res.meta.tags %}
-            <category   scheme="{{ content_url('posts/tags') }}"
+            <category   scheme="{{ content_url('category') }}"
                         term="{{tag}}"
                         label="{{ tag|title }}" />
             {% endfor %}

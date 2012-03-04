@@ -50,8 +50,8 @@ tagger:
     sorter: time
     archives:
         posts:
-            source: posts
-            target: posts/tags
+            source: /
+            target: category
             template: tagged_posts.j2
             archive_extension: html
             meta:
@@ -59,7 +59,7 @@ tagger:
 paginator:
     sorter: time
     size: 5
-    file_pattern: posts/$PAGE/$FILE$EXT
+    file_pattern: page/$PAGE/$FILE$EXT
 
 urlcleaner:
     index_file_names:
