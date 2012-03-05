@@ -1,6 +1,5 @@
 {% extends "base.j2" %}
 {% block main -%}
-    <h2 class="page-title">The Blog</h2>
     {% for res in resource.page.posts %}
         <ul class="excerpt">
             {% from "macros.j2" import render_excerpt with context  %}
@@ -19,5 +18,4 @@
         </a>
     {% endif %}
     </nav>
-    <hr>
 {%- endblock %}

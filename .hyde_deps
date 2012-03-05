@@ -79,7 +79,8 @@
   sidebar.j2, analytics.j2, disqus.j2, base.j2, macros.j2, footer.j2]
 !!python/unicode '404.html': [sidebar.j2, analytics.j2, base.j2, page.j2, footer.j2,
   macros.j2]
-!!python/unicode 'about.html': [base.j2, analytics.j2, sidebar.j2, macros.j2, footer.j2]
+!!python/unicode 'about.html': [sidebar.j2, analytics.j2, base.j2, page.j2, footer.j2,
+  macros.j2]
 !!python/unicode 'atom.xml': [atom.j2, macros.j2]
 !!python/unicode 'blog/angry-post.html': [blog.j2, macros.j2, base.j2, analytics.j2]
 !!python/unicode 'blog/atom.xml': [atom.j2, macros.j2]
@@ -187,24 +188,23 @@
   base.j2, macros.j2, footer.j2]
 !!python/unicode 'excerpts.xml': [atom.j2, macros.j2]
 !!python/unicode 'index.html': [!!python/unicode '/2010/01/pretty-amazing-video.html',
-  !!python/unicode 'media/skel/404.html', !!python/unicode '2010/01/pretty-amazing-video.html',
+  !!python/unicode '/2010/04/red-hatcentosfedora-display-release-info.html', !!python/unicode '2010/01/pretty-amazing-video.html',
   !!python/unicode '2010/07/backing-up-mysql-database-to-rackspace-cloud-files-on-centos-5-4.html',
   !!python/unicode '/2010/09/wireless-setup-on-the-asus-ul30v-series.html', !!python/unicode '2010/03/redhat-5-install-screen-goes-black.html',
-  base.j2, analytics.j2, !!python/unicode '/2010/04/red-hatcentosfedora-display-release-info.html',
-  !!python/unicode '/media/skel/404.html', !!python/unicode '/2011/01/using-postmarkapp-api-with-kohana-3.html',
+  base.j2, analytics.j2, !!python/unicode '/2011/01/using-postmarkapp-api-with-kohana-3.html',
   !!python/unicode '/2011/07/python3-wrapper-for-the-dnsmadeasy-com-rest-api.html',
   !!python/unicode '/2010/07/backing-up-mysql-database-to-rackspace-cloud-files-on-centos-5-4.html',
   !!python/unicode '/2010/10/get-all-files-from-ftp-recursively-to-another-linux-server.html',
-  !!python/unicode '/2011/03/red-hat-6-which-semanage-no-semanage-in.html', !!python/unicode '2010/04/red-hatcentosfedora-display-release-info.html',
-  !!python/unicode '2010/05/centos-opening-port-80-for-service-httpd.html', !!python/unicode '2010/07/easy-mail-installation-centos.html',
-  !!python/unicode '/2010/05/amazing-list-of-articles-for-centos-setup.html', !!python/unicode '2011/03/red-hat-6-which-semanage-no-semanage-in.html',
-  !!python/unicode '2011/12/remove-unwanted-commpression-in-during-rpmbuild-for-jar-files.html',
+  !!python/unicode '/2011/03/red-hat-6-which-semanage-no-semanage-in.html', !!python/unicode '2011/01/using-postmarkapp-api-with-kohana-3.html',
+  !!python/unicode '2010/04/red-hatcentosfedora-display-release-info.html', !!python/unicode '2010/05/centos-opening-port-80-for-service-httpd.html',
+  !!python/unicode '2010/07/easy-mail-installation-centos.html', !!python/unicode '/2010/05/amazing-list-of-articles-for-centos-setup.html',
+  !!python/unicode '2011/03/red-hat-6-which-semanage-no-semanage-in.html', !!python/unicode '2011/12/remove-unwanted-commpression-in-during-rpmbuild-for-jar-files.html',
   !!python/unicode '2011/07/python3-wrapper-for-the-dnsmadeasy-com-rest-api.html',
   !!python/unicode '/2011/12/sublime-text-2-added-dev-builds-repo-for-fedora-1516.html',
-  !!python/unicode 'media/skel/index.html', !!python/unicode '/2010/05/removing-thematic-comments-from-single-post.html',
-  !!python/unicode '/2010/03/redhat-5-install-screen-goes-black.html', sidebar.j2,
-  !!python/unicode '2011/03/configure-a-caching-only-name-server-to-forward-dns-queries.html',
-  blog.j2, !!python/unicode '/2010/07/easy-mail-installation-centos.html', !!python/unicode '2011/05/install-unrar-fedora-15-beta.html',
+  !!python/unicode '/2010/05/removing-thematic-comments-from-single-post.html', !!python/unicode '/2010/03/redhat-5-install-screen-goes-black.html',
+  sidebar.j2, !!python/unicode '2011/03/configure-a-caching-only-name-server-to-forward-dns-queries.html',
+  blog.j2, !!python/unicode '/2010/07/easy-mail-installation-centos.html', !!python/unicode '/media/skeleton/index.html',
+  !!python/unicode 'media/skeleton/404.html', !!python/unicode '2011/05/install-unrar-fedora-15-beta.html',
   !!python/unicode '/2011/03/single-user-mode-red-hat-enterprise-linux-6-0-and-passwd-problems.html',
   !!python/unicode '/2011/05/install-unrar-fedora-15-beta.html', !!python/unicode '2010/11/lamp-setup-on-ubuntulinux-mint.html',
   !!python/unicode '2011/01/installing-php-5-3-x-on-centos-5-5.html', !!python/unicode '/2011/02/linux-find-command-broken-down.html',
@@ -215,28 +215,28 @@
   !!python/unicode '/2010/09/installing-adobe-air-on-fedora-13.html', !!python/unicode '2012/01/python-nose-importerror-cannot-import-name.html',
   !!python/unicode '2010/05/removing-thematic-comments-from-single-post.html', !!python/unicode '/2010/07/magento-1-4-contact-form-error-unable-to-submit-your-request-please-try-again-later.html',
   !!python/unicode '2011/10/trying-out-fedora-16.html', !!python/unicode '2010/07/lewis-moorman-speaks-at-ocon-2010-about-openstack.html',
-  !!python/unicode 'about.html', !!python/unicode '/2011/04/awesome-command-line-s3-backup-tool.html',
-  listing.j2, !!python/unicode '2009/04/a-mossocom-review.html', !!python/unicode '/2009/04/a-mossocom-review.html',
+  !!python/unicode '/2011/04/awesome-command-line-s3-backup-tool.html', listing.j2,
+  !!python/unicode '2009/04/a-mossocom-review.html', !!python/unicode '/2009/04/a-mossocom-review.html',
   !!python/unicode '2010/10/get-all-files-from-ftp-recursively-to-another-linux-server.html',
   !!python/unicode '2008/11/self-reliance.html', !!python/unicode '2010/09/installing-adobe-air-on-fedora-13.html',
   !!python/unicode '/2011/11/sublime-text-2-fedora-1516-unofficial-repo.html', !!python/unicode '/2011/04/nfs-4-mounts-on-red-hat-enterprise-linux-with-iptables-enabled.html',
   !!python/unicode '2011/02/linux-find-command-broken-down.html', !!python/unicode '2009/01/valley-peaks-web-series.html',
   !!python/unicode '/2012/01/python-nose-importerror-cannot-import-name.html', !!python/unicode '/2010/05/magento-install-on-centos-5-3-rackspace-cloud.html',
-  !!python/unicode '2011/01/using-postmarkapp-api-with-kohana-3.html', !!python/unicode '2011/04/nfs-4-mounts-on-red-hat-enterprise-linux-with-iptables-enabled.html',
-  !!python/unicode '/2010/11/lamp-setup-on-ubuntulinux-mint.html', !!python/unicode '/2011/03/configure-a-caching-only-name-server-to-forward-dns-queries.html',
+  !!python/unicode '/media/skeleton/404.html', !!python/unicode '2011/04/nfs-4-mounts-on-red-hat-enterprise-linux-with-iptables-enabled.html',
+  !!python/unicode '/2009/01/valley-peaks-web-series.html', !!python/unicode '/2010/11/lamp-setup-on-ubuntulinux-mint.html',
+  !!python/unicode '/2011/03/configure-a-caching-only-name-server-to-forward-dns-queries.html',
   !!python/unicode '2011/04/awesome-command-line-s3-backup-tool.html', !!python/unicode '/2010/05/centos-opening-port-80-for-service-httpd.html',
   !!python/unicode '2010/05/amazing-list-of-articles-for-centos-setup.html', !!python/unicode '2011/11/sublime-text-2-fedora-1516-unofficial-repo.html',
   macros.j2, footer.j2, !!python/unicode '/2010/10/setting-up-ssh-key-authentication-centosfedora.html',
   !!python/unicode '2011/03/single-user-mode-red-hat-enterprise-linux-6-0-and-passwd-problems.html',
   !!python/unicode '/2011/12/remove-unwanted-commpression-in-during-rpmbuild-for-jar-files.html',
   disqus.j2, !!python/unicode '2010/10/setting-up-ssh-key-authentication-centosfedora.html',
-  !!python/unicode '/media/skel/index.html', !!python/unicode '2010/12/how-to-scrobble-pandora-to-last-fm.html',
-  !!python/unicode '2011/12/sublime-text-2-added-dev-builds-repo-for-fedora-1516.html',
-  !!python/unicode '/about.html', !!python/unicode '/2010/07/lewis-moorman-speaks-at-ocon-2010-about-openstack.html',
-  !!python/unicode '/2010/01/apple-ipad.html', !!python/unicode '2010/07/magento-1-4-contact-form-error-unable-to-submit-your-request-please-try-again-later.html',
+  !!python/unicode '2010/12/how-to-scrobble-pandora-to-last-fm.html', !!python/unicode '2011/12/sublime-text-2-added-dev-builds-repo-for-fedora-1516.html',
+  !!python/unicode 'media/skeleton/index.html', !!python/unicode '/2010/07/lewis-moorman-speaks-at-ocon-2010-about-openstack.html',
+  !!python/unicode '/2011/10/trying-out-fedora-16.html', !!python/unicode '2010/07/magento-1-4-contact-form-error-unable-to-submit-your-request-please-try-again-later.html',
   !!python/unicode '2011/05/mounting-your-rackspace-cloudfiles-in-centosrhel-5-55-6-via-cloudfuse.html',
   !!python/unicode '/2010/11/zimbra-desktop-error-failed-to-execute-child-process-optzimbrazdesktoplinuxprismzdclient.html',
-  !!python/unicode '/2011/10/trying-out-fedora-16.html', !!python/unicode '/2011/01/installing-php-5-3-x-on-centos-5-5.html']
+  !!python/unicode '/2010/01/apple-ipad.html', !!python/unicode '/2011/01/installing-php-5-3-x-on-centos-5-5.html']
 !!python/unicode 'media/css/autumn.css': []
 !!python/unicode 'media/css/bebas-neue/BebasNeue-webfont.svg': []
 !!python/unicode 'media/css/bebas-neue/Dharma Type Font License.txt': []
@@ -262,6 +262,14 @@
 !!python/unicode 'media/skel/stylesheets/base.css': []
 !!python/unicode 'media/skel/stylesheets/layout.css': []
 !!python/unicode 'media/skel/stylesheets/skeleton.css': []
+!!python/unicode 'media/skeleton/404.html': []
+!!python/unicode 'media/skeleton/index.html': []
+!!python/unicode 'media/skeleton/javascripts/tabs.js': []
+!!python/unicode 'media/skeleton/robots.txt': []
+!!python/unicode 'media/skeleton/stylesheets/additions.css': []
+!!python/unicode 'media/skeleton/stylesheets/base.css': []
+!!python/unicode 'media/skeleton/stylesheets/layout.css': []
+!!python/unicode 'media/skeleton/stylesheets/skeleton.css': []
 !!python/unicode 'portfolio/index.html': [macros.j2, base.j2, analytics.j2]
 !!python/unicode 'posts/2008-11-27-self-reliance.html': [blog.j2, macros.j2, base.j2,
   analytics.j2]

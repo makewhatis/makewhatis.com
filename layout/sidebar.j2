@@ -3,25 +3,22 @@
     {% from "macros.j2" import render_nav with context %}
     {{ render_nav(menu) }}
     {% endblock %}                
-            
-    <!-- <hr /> DIVIDER -->
-
+    <div class="tagcloud">
+        <h4>recent tags</h4>
+        {% set tags = [] %}
+        {% for tagname, tag in site.tagger.tags.to_dict().iteritems() -%}
+            {% do tags.append(tag['name']) %}
+        {%- endfor %}
+        {%- for tag in tags %}
+            {% if loop.index < 25 %} 
+                <a title="{{ tag }}" href="{{ content_url('category/{0}'.format(tag)) }}">{{ tag }}</a>
+            {% endif %} 
+        {% endfor -%}
+    </div>
+    <hr />
     <h4 id="twitter-header">twitter</h4>
     <div id="twitter-sidebar"><div class="clearfix"></div></div>
     <a href="http://twitter.com/makewhatis/" target="_blank" class="button">Follow on Twitter</a>
-
-    <div class="tagcloud">
-    <h4>recent tags</h4>
-    {% set tags = [] %}
-    {% for tagname, tag in site.tagger.tags.to_dict().iteritems() -%}
-        {% do tags.append(tag['name']) %}
-    {%- endfor %}
-    {%- for tag in tags %}
-        {% if loop.index < 25 %} 
-            <a title="{{ tag }}" href="{{ content_url('category/{0}'.format(tag)) }}">{{ tag }}</a>
-        {% endif %} 
-    {% endfor -%}
-    </div>
 </div>
 
 
