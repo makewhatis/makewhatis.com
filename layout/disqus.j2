@@ -11,8 +11,8 @@
     var disqus_developer = 1; // developer mode is on
     {% endif %}
     var disqus_shortname = 'makewhatis';
-    var disqus_identifier = "{{ resource.url }}";
-    var disqus_url = "{{ "http://makewhatis.com/"~resource.url }}";
+    var disqus_identifier = "{{ content_url(resource.url) }}";
+    var disqus_url = "{{ "http://makewhatis.com"~content_url(resource.url) }}";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
