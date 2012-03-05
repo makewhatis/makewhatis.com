@@ -1,6 +1,8 @@
 div.container {
     padding-top: 60px;
 }
+/* fix for margins in posts */
+.container p { margin: 10px 0;}
 nav {
     position: relative;
 }

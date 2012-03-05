@@ -1,11 +1,10 @@
 {% extends "base.j2" %}
 {% block main -%}
     <h3>{{ resource.meta.title }}</h3>
-    <div class="post-details">
     <time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}">
-        Posted: {{ resource.meta.created.strftime('%a, %d %b %Y') }}
-    </time>
-    in categories &nbsp; 
+    {{ resource.meta.created.strftime('%a, %d %b %Y') }}
+    </time><br />
+    Posted in &nbsp; 
     {% if resource.meta.tags %}      
             {% for tag in resource.meta.tags %}
                 <a class="small" href="{{ content_url('category/'~tag~'.html') }}">

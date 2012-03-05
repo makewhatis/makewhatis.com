@@ -7,9 +7,9 @@
 </h3>
 <div>
     <time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
-        Posted: {{ res.meta.created.strftime('%a, %d %b %Y') }}
-    </time>
-    in categories &nbsp; 
+        {{ res.meta.created.strftime('%a, %d %b %Y') }}
+    </time>| <a href="{{ content_url(res.url) }}#disqus_thread"></a><br />
+    Posted in &nbsp;
     {% if res.meta.tags %}      
             {% for tag in res.meta.tags %}
                 <a class="small" href="{{ content_url('category/'~tag~'.html') }}">
