@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
+<url>
+    <loc>http://makewhatis.com</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/about</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2012/03/makewhatis-running-on-hyde</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2012/01/python-nose-importerror-cannot-import-name</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2011/12/sublime-text-2-added-dev-builds-repo-for-fedora-1516</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2011/12/remove-unwanted-commpression-in-during-rpmbuild-for-jar-files</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2011/11/sublime-text-2-fedora-1516-unofficial-repo</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2010/09/installing-adobe-air-on-fedora-13</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2010/01/apple-ipad</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2010/01/pretty-amazing-video</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2009/01/valley-peaks-web-series</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2008/11/self-reliance</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2011/04/nfs-4-mounts-on-red-hat-enterprise-linux-with-iptables-enabled</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2011/01/using-postmarkapp-api-with-kohana-3</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2011/10/trying-out-fedora-16</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2011/03/register-red-hat-enterprise-linux-6-1-beta</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2011/03/single-user-mode-red-hat-enterprise-linux-6-0-and-passwd-problems</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2011/03/configure-a-caching-only-name-server-to-forward-dns-queries</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2011/03/red-hat-6-which-semanage-no-semanage-in</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2011/02/linux-find-command-broken-down</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2011/01/installing-php-5-3-x-on-centos-5-5</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2010/12/how-to-scrobble-pandora-to-last-fm</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2010/11/lamp-setup-on-ubuntulinux-mint</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2010/11/zimbra-desktop-error-failed-to-execute-child-process-optzimbrazdesktoplinuxprismzdclient</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2010/10/get-all-files-from-ftp-recursively-to-another-linux-server</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2010/09/wireless-setup-on-the-asus-ul30v-series</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2010/07/lewis-moorman-speaks-at-ocon-2010-about-openstack</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2010/07/easy-mail-installation-centos</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2010/07/backing-up-mysql-database-to-rackspace-cloud-files-on-centos-5-4</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2010/05/centos-opening-port-80-for-service-httpd</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2010/05/amazing-list-of-articles-for-centos-setup</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2010/04/red-hatcentosfedora-display-release-info</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2010/03/redhat-5-install-screen-goes-black</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2011/04/awesome-command-line-s3-backup-tool</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2011/05/mounting-your-rackspace-cloudfiles-in-centosrhel-5-55-6-via-cloudfuse</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2011/07/python3-wrapper-for-the-dnsmadeasy-com-rest-api</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2010/05/magento-install-on-centos-5-3-rackspace-cloud</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2010/05/removing-thematic-comments-from-single-post</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2010/10/setting-up-ssh-key-authentication-centosfedora</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2011/05/install-unrar-fedora-15-beta</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url> 
+<url>
+    <loc>http://makewhatis.com/2010/07/magento-1-4-contact-form-error-unable-to-submit-your-request-please-try-again-later</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2011/10/09/trying-out-fedora-16/fedora16/</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/media/skeleton/404</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/media/skeleton/</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+<url>
+    <loc>http://makewhatis.com/2009/04/a-mossocom-review</loc>
+    <lastmod>2012-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+</url>  
+</urlset>        
