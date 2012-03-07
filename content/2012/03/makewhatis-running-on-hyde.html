@@ -1,0 +1,22 @@
+---
+title: makewhatis now runs on Hyde!
+created: !!timestamp '2012-03-05 00:00:00'
+tags:
+    - python
+    - hyde
+---
+{% mark excerpt %}
+
+I've been eyeing the static site generators for some time now, and just haven't gotten myself to site down and learn one yet. First one that caught my eye was [Jekyll](https://github.com/mojombo/jekyll), but being as that was in ruby it didn't seem like too much fun to hack on (not hating on ruby, just more about python these days). [Hyde](https://github.com/hyde/hyde) is a pure python generator that has had some heavy development over the past year. It went from a DJango based app, to one that was coded from the ground up. 
+
+I'll admit, it took a minute to wrap my head around the Jinga2 templating and how everything tied into Hydes structure. Documentation is lacking, but the code isn't too crazy to figure out. 
+
+{% endmark -%}
+
+Now that I spent a good weekend disecting the code, I am pretty happy with it overall. I switched from the Thematic-based wordpress theme Ninja, to the Skeleton theme, wrapped around hyde. 
+
+Maybe its the fact that I get to setup automatic deployments with Jenkins upon commit that makes me like this better, or perhaps the fact that there is no database whatsoever to deal with. Either way I am enjoying this system so far. 
+
+As far as comments, the only options were really a hosted solution like Disqus or Intense Debate. I was going to dump them altogether to increase load time :-P but they really are a good way to get responses and suggestions from people, as well as for others to reach out with any questions. 
+
+If you dig the idea of pure html being compiled each time you update your blog, and you like python way more than ruby, then you should probably check out [Hyde](https://github.com/hyde/hyde). 
