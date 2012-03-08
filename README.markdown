@@ -1,1 +1,3 @@
-Basic template for hyde.
+========================
+Hyde built with Skeleton
+========================
