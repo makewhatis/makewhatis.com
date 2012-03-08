@@ -2,6 +2,52 @@ RewriteEngine On
 
 Options -Indexes
 
+
+RewriteCond %{HTTP_HOST} !^makewhatis\.com$
+RewriteRule (.*) http://makewhatis.com/$1 [R=301,L]
+
+RewriteCond %{QUERY_STRING}  ^$
+RewriteRule ^2012/01/15/python-nose-importerror-cannot-import-name/$ /2012/01/python-nose-importerror-cannot-import-name? [R=301,NE,NC,L]
+RewriteRule ^2011/11/13/sublime-text-2-fedora-1516-unofficial-repo/$ /2011/11/sublime-text-2-fedora-1516-unofficial-repo? [R=301,NE,NC,L]
+RewriteRule ^2011/12/31/sublime-text-2-%e2%80%93-added-dev-builds-repo-for-fedora-1516/$ /2011/12/sublime-text-2-added-dev-builds-repo-for-fedora-1516? [R=301,NE,NC,L]
+RewriteRule ^2011/12/15/remove-unwanted-commpression-in-during-rpmbuild-for-jar-files/$ /2011/12/remove-unwanted-commpression-in-during-rpmbuild-for-jar-files? [R=301,NE,NC,L]
+RewriteRule ^2011/05/12/mounting-your-rackspace-cloudfiles-in-centosrhel-5-55-6-via-cloudfuse/$ /2011/05/mounting-your-rackspace-cloudfiles-in-centosrhel-5-55-6-via-cloudfuse? [R=301,NE,NC,L]
+RewriteRule ^2010/05/13/magento-install-on-centos-5-3-rackspace-cloud/$ /2010/05/magento-install-on-centos-5-3-rackspace-cloud? [R=301,NE,NC,L]
+RewriteRule ^2011/07/13/python3-wrapper-for-the-dnsmadeasy-com-rest-api/$ /2011/07/python3-wrapper-for-the-dnsmadeasy-com-rest-api? [R=301,NE,NC,L]
+RewriteRule ^2011/04/06/nfs-4-mounts-on-red-hat-enterprise-linux-with-iptables-enabled/$ /2011/04/nfs-4-mounts-on-red-hat-enterprise-linux-with-iptables-enabled? [R=301,NE,NC,L]
+RewriteRule ^2011/05/02/install-unrar-fedora-15-beta/$ /2011/05//install-unrar-fedora-15-beta? [R=301,NE,NC,L]
+RewriteRule ^2011/04/05/awesome-command-line-s3-backup-tool/$ /2011/04/awesome-command-line-s3-backup-tool? [R=301,NE,NC,L]
+RewriteRule ^2011/03/22/register-red-hat-enterprise-linux-6-1-beta/$ /2011/03/register-red-hat-enterprise-linux-6-1-beta? [R=301,NE,NC,L]
+RewriteRule ^2011/03/16/configure-a-caching-only-name-server-to-forward-dns-queries/$ /2011/03/configure-a-caching-only-name-server-to-forward-dns-queries? [R=301,NE,NC,L]
+RewriteRule ^2011/03/21/single-user-mode-red-hat-enterprise-linux-6-0-and-passwd-problems/$ /2011/03/single-user-mode-red-hat-enterprise-linux-6-0-and-passwd-problems? [R=301,NE,NC,L]
+RewriteRule ^2011/02/19/linux-find-command-broken-down/$ /2011/02/linux-find-command-broken-down? [R=301,NE,NC,L]
+RewriteRule ^2011/03/14/red-hat-6-which-semanage-no-semanage-in/$ /2011/03/red-hat-6-which-semanage-no-semanage-in? [R=301,NE,NC,L]
+RewriteRule ^2010/11/25/lamp-setup-on-ubuntulinux-mint/$ /2010/11/lamp-setup-on-ubuntulinux-mint? [R=301,NE,NC,L]
+RewriteRule ^2011/01/07/installing-php-5-3-x-on-centos-5-5/$ /2011/01/installing-php-5-3-x-on-centos-5-5? [R=301,NE,NC,L]
+RewriteRule ^2011/01/05/using-postmarkapp-api-with-kohana-3/$ /2011/01/using-postmarkapp-api-with-kohana-3? [R=301,NE,NC,L]
+RewriteRule ^2010/12/28/how-to-scrobble-pandora-to-last-fm/$ /2010/12/how-to-scrobble-pandora-to-last-fm? [R=301,NE,NC,L]
+RewriteRule ^2010/10/30/get-all-files-from-ftp-recursively-to-another-linux-server/$ /2010/10/get-all-files-from-ftp-recursively-to-another-linux-server? [R=301,NE,NC,L]
+RewriteRule ^2010/11/26/zimbra-desktop-error-failed-to-execute-child-process-optzimbrazdesktoplinuxprismzdclient/$ /2010/11/zimbra-desktop-error-failed-to-execute-child-process-optzimbrazdesktoplinuxprismzdclient? [R=301,NE,NC,L]
+RewriteRule ^2010/10/25/setting-up-ssh-key-authentication-centosfedora/$ /2010/10/setting-up-ssh-key-authentication-centosfedora? [R=301,NE,NC,L]
+RewriteRule ^2009/01/17/valley-peaks-web-series/$ /2009/01/valley-peaks-web-series? [R=301,NE,NC,L]
+RewriteRule ^2010/05/25/centos-opening-port-80-for-service-httpd/$ /2010/05/centos-opening-port-80-for-service-httpd? [R=301,NE,NC,L]
+RewriteRule ^2010/07/15/backing-up-mysql-database-to-rackspace-cloud-files-on-centos-5-4/$ /2010/07/backing-up-mysql-database-to-rackspace-cloud-files-on-centos-5-4? [R=301,NE,NC,L]
+RewriteRule ^2010/07/18/easy-mail-installation-centos/$ /2010/07/easy-mail-installation-centos? [R=301,NE,NC,L]
+RewriteRule ^2010/07/27/lewis-moorman-speaks-at-ocon-2010-about-openstack/$ /2010/07/lewis-moorman-speaks-at-ocon-2010-about-openstack? [R=301,NE,NC,L]
+RewriteRule ^2010/07/31/magento-1-4-contact-form-error-unable-to-submit-your-request-please-try-again-later/$ /2010/07/magento-1-4-contact-form-error-unable-to-submit-your-request-please-try-again-later? [R=301,NE,NC,L]
+RewriteRule ^2010/09/03/installing-adobe-air-on-fedora-13/$ /2010/09/installing-adobe-air-on-fedora-13? [R=301,NE,NC,L]
+RewriteRule ^2010/09/18/wireless-setup-on-the-asus-ul30v-series/$ /2010/09/wireless-setup-on-the-asus-ul30v-series? [R=301,NE,NC,L]
+RewriteRule ^2010/01/28/apple-ipad/$ /2010/01/apple-ipad? [R=301,NE,NC,L]
+RewriteRule ^2008/11/27/self-reliance/$ /2008/11/self-reliance? [R=301,NE,NC,L]
+RewriteRule ^2010/05/03/removing-thematic-comments-from-single-post/$ /2010/05/removing-thematic-comments-from-single-post? [R=301,NE,NC,L]
+RewriteRule ^2010/05/16/amazing-list-of-articles-for-centos-setup/$ /2010/05/amazing-list-of-articles-for-centos-setup? [R=301,NE,NC,L]
+RewriteRule ^2009/04/18/a-mossocom-review/$ /2009/04/a-mossocom-review? [R=301,NE,NC,L]
+RewriteRule ^2010/03/03/redhat-5-install-screen-goes-black/$ /2010/03/redhat-5-install-screen-goes-black? [R=301,NE,NC,L]
+RewriteRule ^2010/04/23/red-hatcentosfedora-display-release-info/$ /2010/04/red-hatcentosfedora-display-release-info/? [R=301,NE,NC,L]
+RewriteRule ^2010/01/19/pretty-amazing-video/$ /2010/01/pretty-amazing-video? [R=301,NE,NC,L]
+
+
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
