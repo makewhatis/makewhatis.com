@@ -1,0 +1,23 @@
+---
+title: BOOM&#33; Highlight.js
+created: !!timestamp '2012-03-08 21:18:00'
+tags:
+    - python
+    - hyde
+---
+{% mark excerpt %}
+
+After moving to Hyde I was trying to get code highlighting to work with Pygments. For some reason it just wouldn't take, I got my code blocks, but wouldnt add classes to code types. I was probably doing something wrong, as is usually the case. 
+
+Either way, I ran accross [Highlight.js](http://softwaremaniacs.org/soft/highlight/en/) which is an amazing js library that autodetects code types, and highlights. Not perfect, but damn near. 
+
+All I had to do was include the script in my template, I put it in base.j2:
+    
+    <script src="{{ media_url('javascripts/highlight.pack.js') }}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  
+At that point , I just indent my code in my post, and BAM! I have code highlighting. 
+
+*Found this on [http://smus.com/](http://smus.com/), which happens to also be a [Hyde](https://github.com/hyde) powered site.*
+
+{% endmark %}
