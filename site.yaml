@@ -72,3 +72,8 @@ urlcleaner:
 
 analytics:
     id: 1
+
+markdown:
+    extensions:
+        - def_list
+        - headerid

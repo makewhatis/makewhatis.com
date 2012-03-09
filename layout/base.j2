@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="{{ media_url('stylesheets/layout.css') }}">
   <link rel="stylesheet" href="{{ media_url('stylesheets/base.css') }}">
   <link rel="stylesheet" href="{{ media_url('stylesheets/additions.css') }}">
+  <link rel="stylesheet" href="{{ media_url('stylesheets/github.css') }}">
   {% endblock css %}
 
   <!--[if lt IE 9]>
@@ -69,6 +70,8 @@
   {% block scripts %}
   <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   <script src="{{ media_url('javascripts/tabs.js') }}"></script>
+  <script src="{{ media_url('javascripts/highlight.pack.js') }}"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   {% endblock scripts %}
 
 
@@ -78,7 +81,20 @@
   <![endif]-->
 
   {% block analytics %}
-  {% include "analytics.j2" %}
+    {% if site.config.mode == "production" %}
+    <!-- Piwik -->
+    <script type="text/javascript">
+    var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.fhlabs.com/" : "http://piwik.fhlabs.com/");
+    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+    </script><script type="text/javascript">
+    try {
+    var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+    piwikTracker.trackPageView();
+    piwikTracker.enableLinkTracking();
+    } catch( err ) {}
+    </script><noscript><p><img src="http://piwik.fhlabs.com/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
+    <!-- End Piwik Tracking Code -->
+  {% endif %}
   {% endblock analytics %}
 
   <script type="text/javascript">

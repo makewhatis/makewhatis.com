@@ -16,15 +16,19 @@ size when extracted from the rpm, compared to in the sources dir after build.
 This seems to be information that is kept in the dark corner of the internet,
 so after finding the answer, figure I would shine one more light on it. rpm
 runs a series of repack commands at the end of rpmbuild, one being "brp-java-
-repack-jars" 
+repack-jars"
 {% endmark -%}
 
+<pre>
+<code class="bash">
     + /usr/lib/rpm/redhat/brp-compress
     + /usr/lib/rpm/redhat/brp-strip /usr/bin/strip
     + /usr/lib/rpm/redhat/brp-strip-static-archive /usr/bin/strip
     + /usr/lib/rpm/redhat/brp-strip-comment-note /usr/bin/strip /usr/bin/objdump
     + /usr/lib/rpm/brp-python-bytecompile
     + /usr/lib/rpm/redhat/brp-java-repack-jars
+</code>
+</pre>
 
 These final commands cause the jars to turn out a different size due to compression, 
 which may cause someone who is not familiar with this function to question the integrity of the

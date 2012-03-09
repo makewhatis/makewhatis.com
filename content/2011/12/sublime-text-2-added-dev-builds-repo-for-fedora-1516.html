@@ -12,9 +12,10 @@ much on the stable. For those of you who like to live on the bleeding edge, I
 added a "sublime2-dev" repo. This will contain all of the builds as they are
 released, which seems to be every few days. http://www.sublimetext.com/dev
 Also added a symlink "/usr/bin/sublime" to make calling files from the command
-line easier. To use the new repo just redownload the new repo file and yum
+line easier.
+{% endmark -%}
+To use the new repo just redownload the new repo file and yum
 upgrade: 
 
-    sudo wget -O /etc/yum.repos.d/sublime2.repo http://repo.cloudhike.com/sublime2/fedora/sublime2.repo
+    wget -O /etc/yum.repos.d/sublime2.repo http://repo.cloudhike.com/sublime2/fedora/sublime2.repo
 
-{% endmark -%}
