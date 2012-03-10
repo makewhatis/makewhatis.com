@@ -77,6 +77,8 @@
   blog.j2, sidebar.j2, disqus.j2, base.j2, macros.j2, footer.j2]
 !!python/unicode '2012/01/python-nose-importerror-cannot-import-name.html': [blog.j2,
   sidebar.j2, disqus.j2, base.j2, macros.j2, footer.j2]
+!!python/unicode '2012/03/boom-highlight-js.html': [blog.j2, sidebar.j2, disqus.j2,
+  base.j2, macros.j2, footer.j2]
 !!python/unicode '2012/03/makewhatis-running-on-hyde.html': [blog.j2, sidebar.j2,
   disqus.j2, base.j2, macros.j2, footer.j2]
 !!python/unicode '404.html': [base.j2, sidebar.j2, page.j2, footer.j2, macros.j2]
@@ -206,7 +208,8 @@
   !!python/unicode '2011/05/install-unrar-fedora-15-beta.html', !!python/unicode '2010/12/how-to-scrobble-pandora-to-last-fm.html',
   !!python/unicode '2011/12/sublime-text-2-added-dev-builds-repo-for-fedora-1516.html',
   !!python/unicode '2008/11/self-reliance.html', !!python/unicode 'media/skeleton/index.html',
-  !!python/unicode '2010/09/installing-adobe-air-on-fedora-13.html', !!python/unicode '2010/07/backing-up-mysql-database-to-rackspace-cloud-files-on-centos-5-4.html',
+  !!python/unicode '2010/09/installing-adobe-air-on-fedora-13.html', !!python/unicode '2012/03/boom-highlight-js.html',
+  !!python/unicode '2010/07/backing-up-mysql-database-to-rackspace-cloud-files-on-centos-5-4.html',
   !!python/unicode '2010/10/get-all-files-from-ftp-recursively-to-another-linux-server.html',
   !!python/unicode '2010/11/lamp-setup-on-ubuntulinux-mint.html', !!python/unicode '2011/02/linux-find-command-broken-down.html',
   !!python/unicode '2011/01/installing-php-5-3-x-on-centos-5-5.html', !!python/unicode '2010/07/magento-1-4-contact-form-error-unable-to-submit-your-request-please-try-again-later.html',
@@ -243,6 +246,7 @@
 !!python/unicode 'media/skeleton/404.html': []
 !!python/unicode 'media/skeleton/index.html': []
 !!python/unicode 'media/skeleton/javascripts/highlight.pack.js': []
+!!python/unicode 'media/skeleton/javascripts/jquery.tagcloud.js': []
 !!python/unicode 'media/skeleton/javascripts/tabs.js': []
 !!python/unicode 'media/skeleton/robots.txt': []
 !!python/unicode 'media/skeleton/stylesheets/additions.css': []

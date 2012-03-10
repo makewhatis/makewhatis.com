@@ -5,13 +5,24 @@
     {% endblock %}                
     <div class="tagcloud">
         <h4>recent tags</h4>
+        {% set pop1 = ['python', 'hyde'] %}
+        {% set pop2 = ['linux', 'redhat'] %}
+        {% set pop3 = ['rpmbuild', 'jenkins'] %}
         {% set tags = [] %}
         {% for tagname, tag in site.tagger.tags.to_dict().iteritems() -%}
             {% do tags.append(tag['name']) %}
         {%- endfor %}
         {%- for tag in tags %}
             {% if loop.index < 25 %} 
-                <a title="{{ tag }}" href="{{ content_url('category/{0}'.format(tag)) }}">{{ tag }}</a>
+                {% if tag in pop1 %}
+                    <a title="{{ tag }}" rel="12" href="{{ content_url('category/{0}'.format(tag)) }}">{{ tag }}</a>
+                {% elif tag in pop2 %}
+                    <a title="{{ tag }}" rel="8" href="{{ content_url('category/{0}'.format(tag)) }}">{{ tag }}</a>
+                {% elif tag in pop3 %}
+                    <a title="{{ tag }}" rel="5" href="{{ content_url('category/{0}'.format(tag)) }}">{{ tag }}</a>
+                {% else %}
+                    <a title="{{ tag }}" rel="1" href="{{ content_url('category/{0}'.format(tag)) }}">{{ tag }}</a>
+                {% endif %}
             {% endif %} 
         {% endfor -%}
     </div>

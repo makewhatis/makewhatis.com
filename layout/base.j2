@@ -72,6 +72,7 @@
   <script src="{{ media_url('javascripts/tabs.js') }}"></script>
   <script src="{{ media_url('javascripts/highlight.pack.js') }}"></script>
   <script>hljs.initHighlightingOnLoad();</script>
+  <script src="{{ media_url('javascripts/jquery.tagcloud.js') }}"></script>
   {% endblock scripts %}
 
 
@@ -97,6 +98,16 @@
   {% endif %}
   {% endblock analytics %}
 
+  <script type="text/javascript">
+  $(function () {
+    $('.tagcloud a').tagcloud();
+  });
+  $.fn.tagcloud.defaults = {
+    size: {start: 10, end: 18, unit: 'pt'},
+    color: {start: '#999', end: '#111'}
+  };
+
+  </script>
   <script type="text/javascript">
   var disqus_shortname = 'makewhatis';
 
