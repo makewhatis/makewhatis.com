@@ -1,0 +1,76 @@
+---
+title: Adding A Tagcloud to Your Hyde Site
+created: !!timestamp '2012-03-10 15:29:00'
+tags:
+    - python
+    - hyde
+---
+{% mark excerpt %}
+
+Loving [Hyde](https://github.com/hyde/hyde) so far. I did however want to replicate the tagcloud that I had on wordpress, which resized the tag text based on frequency of occurrence. 
+
+I look through the code and docs, and determine this is not something that is baked in just yet. I know jquery has a nice [tag cloud plugin](http://archive.plugins.jquery.com/plugin-tags/tag-cloud), but it requires that a count be fed to a rel="" tag in your list. I've been meaning to learn more about hyde's inner workings, so I ventured in with a mission of integrating the jquery tagcloud plugin, with my Hyde site. 
+
+{% endmark -%}
+
+I started out thinking I would make this into a plugin of its own, and began by checking out the other plugins to see exactly how they worked. The [tagger plugin](https://github.com/hyde/hyde/blob/master/hyde/ext/plugins/tagger.py) is the first one I looked at. Since I was working with tags, it only made sense. After poking around for a few hours, I realized that I could simply add a few lines, and another argument to the a function and get those counts for the plugin. 
+
+In added a new dictionary variable in *begin_site()* called tag_count and then fed that into *_process_tags_in_resource()* function. (ommitting irrelevant code)
+
+    def begin_site(self):
+        ...
+        for resource in walker():
+            self._process_tags_in_resource(resource, tags, tag_count)
+        self._process_tag_metadata(tags)
+        self.site.tagger = Expando(dict(tags=tags))
+        self.site.tag_count = Expando(dict(tag_count))
+        ...
+
+In `_process_tags_in_resource()` I simply added a section to add up the number of times that `_process_tags_in_resource()` came across each tag. You can see below how the count is added as it loops through posts.
+
+    def _process_tags_in_resource(self, resource, tags, tag_count):
+        ...
+        for tagname in taglist:
+            ...
+            # get if tag isnt a key yet, make it 0
+            if tagname not in tag_count:
+                tag_count[tagname] = 0
+            tag_count[tagname] = tag_count[tagname] + 1
+
+
+The last thing to do to make the dictionary available in our template was to process it through the `Expando()` class. So right after where the `tags` dict is created, I add the `tag_count`:
+
+    self.site.tagger = Expando(dict(tags=tags))
+    self.site.tag_count = Expando(dict(tag_count))
+
+Now in my template I can simply assign the dict to a value, and use that when looping through my tags.
+
+    {% raw %}
+    {% set tag_counts = site.tag_count.to_dict() %}
+    <h4>recent tags</h4>
+    {% set tags = [] %}
+    {% for tagname, tag in site.tagger.tags.to_dict().iteritems() -%}
+        {% do tags.append(tag['name']) %}
+    {%- endfor %}
+    {%- for tag in tags %}
+        <a title="{{ tag }}" rel="{{ tag_counts[tag] }}" href="{{ content_url('category/{0}'.format(tag)) }}">
+            {{ tag }}
+        </a>
+    {% endfor -%}
+    {% endraw %}
+
+Now as long has you follow the instructions to get the jquery plugin working, which consists of calling the file, and configuring options in your script tags:
+
+    <script type="text/javascript">
+    $(function () {
+    $('.tagcloud a').tagcloud();
+    });
+    $.fn.tagcloud.defaults = {
+    size: {start: 10, end: 24, unit: 'pt'},
+    color: {start: '#999', end: '#111'}
+    };
+
+    </script>
+
+
+Now you should be able to put that all together and have yourself a tag cloud with dynamic size values. For a more detailed dissection of this, you can pick apart this sites code, at [Github](https://github.com/makewhatis/makewhatis.com).
