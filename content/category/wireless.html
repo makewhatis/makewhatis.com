@@ -6,5 +6,5 @@ listable: false
 
 {% set tag = site.tagger.tags['wireless'] %}
 {% set source = site.content.node_from_relative_path('') %}
-{% set walker = source.walk_resources_tagged_with_wireless %}
+{% set walker = source['walk_resources_tagged_with_wireless'] %}
 {% extends "tagged_posts.j2" %}
