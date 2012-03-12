@@ -48,9 +48,6 @@
   {% block content %}
   <div class="container">
       {% block container %}
-        {% block sidebar %}
-          {% include "sidebar.j2" %}
-        {% endblock sidebar %}
         <div class="eleven columns offset-by-one content">
             {% block main %}
             {% endblock main %} 
@@ -58,6 +55,9 @@
             {% include "footer.j2" %}
             {% endblock footer %}
         </div>                             
+         {% block sidebar %}
+          {% include "sidebar.j2" %}
+        {% endblock sidebar %}
         {% endblock container %}
   </div>
   {% endblock content%}
