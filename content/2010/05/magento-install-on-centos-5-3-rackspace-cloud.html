@@ -21,9 +21,11 @@ running CentOS 5.3 64bit.
 
     {% endmark -%}
 
-### Update Server
+
+#### Update Server
 
 First thing after the provision was to update the OS with all the latest packages: 
+
 
     yum update
 
@@ -37,7 +39,7 @@ default install here.
     yum install vim-enhanced.x86_64
 
 
-### Install Apache/Zend Server/php 5.3/Mysql 5.1
+#### Install Apache/Zend Server/php 5.3/Mysql 5.1
 
 I found the easiest way to get all the dependencies for Magento was to just run Zend Server on top of
 Apache. So next I added the Zend Repo: 
@@ -94,7 +96,7 @@ via yum.
     yum --enablerepo=remi install php-mysql php-pdo 
 
 
-### Install Magento
+#### Install Magento
  
 Now that the server is ready to run Magento, we can download and install. 
 

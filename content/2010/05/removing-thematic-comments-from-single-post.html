@@ -17,11 +17,11 @@ I finally found the exact action hook to remove in order to achieve this.
 
 Add this into your functions.php file inside your child theme: 
 
-~~~php~~~        
-function unhook_thematic_functions() {
-    remove_action('thematic_comments_template', 'thematic_include_comments', '5');
-} add_action('init', 'unhook_thematic_functions');
-~~~~~~~~~
+       
+    function unhook_thematic_functions() {
+        remove_action('thematic_comments_template', 'thematic_include_comments', '5');
+    } add_action('init', 'unhook_thematic_functions');
+
 
 This will completely remove the comments box from the post. 
 This isn't it though, I also had to remove the option to see comments in the loop, archive list,

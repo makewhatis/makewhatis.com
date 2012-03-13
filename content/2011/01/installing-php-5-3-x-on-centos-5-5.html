@@ -21,9 +21,11 @@ This assumes you have no php installed at this point. If you do, back up and rem
 
 You have to add the Epel repo first, so run these two commands as root: 
     
-    wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/epel-release-1-1.ius.el5.noarch.rpm rpm -Uvh epel-release-1-1.ius.el5.noarch.rpm
+    wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/epel-release-1-1.ius.el5.noarch.rpm 
+    rpm -Uvh epel-release-1-1.ius.el5.noarch.rpm
     # Now lets add the IUS Community Repo 
-    wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/ius-release-1.0-6.ius.el5.noarch.rpm rpm -Uvh ius-release-1.0-6.ius.el5.noarch.rpm
+    wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/5/x86_64/ius-release-1.0-6.ius.el5.noarch.rpm 
+    rpm -Uvh ius-release-1.0-6.ius.el5.noarch.rpm
 
 This will add the repos to your /etc/yum.repos.d/ directory. Now to go
 into the .repo file and make a few changes. The repo configuration file by
