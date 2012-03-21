@@ -83,6 +83,10 @@
   base.j2, macros.j2, footer.j2]
 !!python/unicode '2012/03/makewhatis-running-on-hyde.html': [blog.j2, sidebar.j2,
   disqus.j2, base.j2, macros.j2, footer.j2]
+!!python/unicode '2012/03/push_for_sparrow_iphone.html': [blog.j2, sidebar.j2, disqus.j2,
+  base.j2, macros.j2, footer.j2]
+!!python/unicode '2012/03/sparrow-on-the-iphone-with-push.html': [blog.j2, sidebar.j2,
+  disqus.j2, base.j2, macros.j2, footer.j2]
 !!python/unicode '404.html': [base.j2, sidebar.j2, page.j2, footer.j2, macros.j2]
 !!python/unicode 'about.html': [base.j2, sidebar.j2, page.j2, footer.j2, macros.j2]
 !!python/unicode 'atom.xml': [atom.j2, macros.j2]
@@ -132,6 +136,8 @@
   footer.j2]
 !!python/unicode 'category/ipatbles.html': [base.j2, tagged_posts.j2, sidebar.j2,
   macros.j2, footer.j2]
+!!python/unicode 'category/iphone.html': [base.j2, tagged_posts.j2, sidebar.j2, macros.j2,
+  footer.j2]
 !!python/unicode 'category/iptables.html': [base.j2, tagged_posts.j2, sidebar.j2,
   macros.j2, footer.j2]
 !!python/unicode 'category/jenkins.html': [base.j2, tagged_posts.j2, sidebar.j2, macros.j2,
@@ -197,13 +203,15 @@
   !!python/unicode '/2010/04/red-hatcentosfedora-display-release-info.html', !!python/unicode '2010/01/pretty-amazing-video.html',
   !!python/unicode '2010/07/backing-up-mysql-database-to-rackspace-cloud-files-on-centos-5-4.html',
   !!python/unicode '/2010/09/wireless-setup-on-the-asus-ul30v-series.html', !!python/unicode '2010/03/redhat-5-install-screen-goes-black.html',
-  base.j2, !!python/unicode '/2011/01/using-postmarkapp-api-with-kohana-3.html', !!python/unicode '/2011/07/python3-wrapper-for-the-dnsmadeasy-com-rest-api.html',
+  base.j2, !!python/unicode '/2012/03/sparrow-on-the-iphone-with-push.html', !!python/unicode '/2011/01/using-postmarkapp-api-with-kohana-3.html',
+  !!python/unicode '/2011/07/python3-wrapper-for-the-dnsmadeasy-com-rest-api.html',
   !!python/unicode '/2010/07/backing-up-mysql-database-to-rackspace-cloud-files-on-centos-5-4.html',
   !!python/unicode '/2010/10/get-all-files-from-ftp-recursively-to-another-linux-server.html',
   !!python/unicode '/2011/03/red-hat-6-which-semanage-no-semanage-in.html', !!python/unicode '2012/03/makewhatis-running-on-hyde.html',
   !!python/unicode '2010/04/red-hatcentosfedora-display-release-info.html', !!python/unicode '2010/05/centos-opening-port-80-for-service-httpd.html',
   !!python/unicode '2010/07/easy-mail-installation-centos.html', !!python/unicode '/2010/05/amazing-list-of-articles-for-centos-setup.html',
-  !!python/unicode '2011/03/red-hat-6-which-semanage-no-semanage-in.html', !!python/unicode '2011/12/remove-unwanted-commpression-in-during-rpmbuild-for-jar-files.html',
+  !!python/unicode '2012/03/sparrow-on-the-iphone-with-push.html', !!python/unicode '2011/03/red-hat-6-which-semanage-no-semanage-in.html',
+  !!python/unicode '2011/12/remove-unwanted-commpression-in-during-rpmbuild-for-jar-files.html',
   !!python/unicode '2011/07/python3-wrapper-for-the-dnsmadeasy-com-rest-api.html',
   !!python/unicode '/2011/12/sublime-text-2-added-dev-builds-repo-for-fedora-1516.html',
   !!python/unicode '/2010/05/removing-thematic-comments-from-single-post.html', !!python/unicode '/2010/03/redhat-5-install-screen-goes-black.html',
@@ -222,8 +230,7 @@
   !!python/unicode '/2011/03/configure-a-caching-only-name-server-to-forward-dns-queries.html',
   !!python/unicode '2010/07/lewis-moorman-speaks-at-ocon-2010-about-openstack.html',
   !!python/unicode '/2011/04/awesome-command-line-s3-backup-tool.html', listing.j2,
-  !!python/unicode '2009/04/a-mossocom-review.html', !!python/unicode '/2009/04/a-mossocom-review.html',
-  !!python/unicode '2010/10/get-all-files-from-ftp-recursively-to-another-linux-server.html',
+  !!python/unicode '2009/04/a-mossocom-review.html', !!python/unicode '2010/10/get-all-files-from-ftp-recursively-to-another-linux-server.html',
   !!python/unicode '2008/11/self-reliance.html', !!python/unicode '2010/09/installing-adobe-air-on-fedora-13.html',
   !!python/unicode '2011/10/trying-out-fedora-16.html', !!python/unicode '/2011/11/sublime-text-2-fedora-1516-unofficial-repo.html',
   !!python/unicode '/2011/04/nfs-4-mounts-on-red-hat-enterprise-linux-with-iptables-enabled.html',
@@ -239,10 +246,10 @@
   disqus.j2, !!python/unicode '/2012/03/adding-tagcloud-to-your-hyde-site.html', !!python/unicode '2010/10/setting-up-ssh-key-authentication-centosfedora.html',
   !!python/unicode '2010/12/how-to-scrobble-pandora-to-last-fm.html', !!python/unicode '2011/12/sublime-text-2-added-dev-builds-repo-for-fedora-1516.html',
   !!python/unicode '/2010/07/lewis-moorman-speaks-at-ocon-2010-about-openstack.html',
-  !!python/unicode '/2011/10/trying-out-fedora-16.html', !!python/unicode '2010/07/magento-1-4-contact-form-error-unable-to-submit-your-request-please-try-again-later.html',
+  !!python/unicode '/2010/01/apple-ipad.html', !!python/unicode '2010/07/magento-1-4-contact-form-error-unable-to-submit-your-request-please-try-again-later.html',
   !!python/unicode '2011/05/mounting-your-rackspace-cloudfiles-in-centosrhel-5-55-6-via-cloudfuse.html',
   !!python/unicode '/2010/11/zimbra-desktop-error-failed-to-execute-child-process-optzimbrazdesktoplinuxprismzdclient.html',
-  !!python/unicode '/2012/03/boom-highlight-js.html', !!python/unicode '/2010/01/apple-ipad.html',
+  !!python/unicode '/2012/03/boom-highlight-js.html', !!python/unicode '/2011/10/trying-out-fedora-16.html',
   !!python/unicode '/2011/01/installing-php-5-3-x-on-centos-5-5.html']
 !!python/unicode 'media/css/autumn.css': []
 !!python/unicode 'media/css/bebas-neue/BebasNeue-webfont.svg': []
