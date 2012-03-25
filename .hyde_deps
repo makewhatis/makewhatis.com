@@ -85,6 +85,8 @@
   disqus.j2, base.j2, macros.j2, footer.j2]
 !!python/unicode '2012/03/push_for_sparrow_iphone.html': [blog.j2, sidebar.j2, disqus.j2,
   base.j2, macros.j2, footer.j2]
+!!python/unicode '2012/03/setting-up-389-directory-server.html': [blog.j2, sidebar.j2,
+  disqus.j2, base.j2, macros.j2, footer.j2]
 !!python/unicode '2012/03/sparrow-on-the-iphone-with-push.html': [blog.j2, sidebar.j2,
   disqus.j2, base.j2, macros.j2, footer.j2]
 !!python/unicode '404.html': [base.j2, sidebar.j2, page.j2, footer.j2, macros.j2]
@@ -144,6 +146,8 @@
   footer.j2]
 !!python/unicode 'category/kohana.html': [base.j2, tagged_posts.j2, sidebar.j2, macros.j2,
   footer.j2]
+!!python/unicode 'category/ldap.html': [base.j2, tagged_posts.j2, sidebar.j2, macros.j2,
+  footer.j2]
 !!python/unicode 'category/linux.html': [base.j2, tagged_posts.j2, sidebar.j2, macros.j2,
   footer.j2]
 !!python/unicode 'category/magento.html': [base.j2, tagged_posts.j2, sidebar.j2, macros.j2,
@@ -199,9 +203,8 @@
 !!python/unicode 'category/wordpress.html': [base.j2, tagged_posts.j2, sidebar.j2,
   macros.j2, footer.j2]
 !!python/unicode 'excerpts.xml': [atom.j2, macros.j2]
-!!python/unicode 'index.html': [!!python/unicode '/2010/01/pretty-amazing-video.html',
-  !!python/unicode '/2010/04/red-hatcentosfedora-display-release-info.html', !!python/unicode '2010/01/pretty-amazing-video.html',
-  !!python/unicode '2010/07/backing-up-mysql-database-to-rackspace-cloud-files-on-centos-5-4.html',
+!!python/unicode 'index.html': [!!python/unicode '/2010/04/red-hatcentosfedora-display-release-info.html',
+  !!python/unicode '2010/01/pretty-amazing-video.html', !!python/unicode '2010/07/backing-up-mysql-database-to-rackspace-cloud-files-on-centos-5-4.html',
   !!python/unicode '/2010/09/wireless-setup-on-the-asus-ul30v-series.html', !!python/unicode '2010/03/redhat-5-install-screen-goes-black.html',
   base.j2, !!python/unicode '/2012/03/sparrow-on-the-iphone-with-push.html', !!python/unicode '/2011/01/using-postmarkapp-api-with-kohana-3.html',
   !!python/unicode '/2011/07/python3-wrapper-for-the-dnsmadeasy-com-rest-api.html',
@@ -237,7 +240,8 @@
   !!python/unicode '2011/02/linux-find-command-broken-down.html', !!python/unicode '2009/01/valley-peaks-web-series.html',
   !!python/unicode '/2012/01/python-nose-importerror-cannot-import-name.html', !!python/unicode '/2010/05/magento-install-on-centos-5-3-rackspace-cloud.html',
   !!python/unicode '2011/01/using-postmarkapp-api-with-kohana-3.html', !!python/unicode '2011/04/nfs-4-mounts-on-red-hat-enterprise-linux-with-iptables-enabled.html',
-  !!python/unicode '/2010/11/lamp-setup-on-ubuntulinux-mint.html', !!python/unicode '2011/04/awesome-command-line-s3-backup-tool.html',
+  !!python/unicode '/2010/11/lamp-setup-on-ubuntulinux-mint.html', !!python/unicode '/2012/03/setting-up-389-directory-server.html',
+  !!python/unicode '2012/03/setting-up-389-directory-server.html', !!python/unicode '2011/04/awesome-command-line-s3-backup-tool.html',
   !!python/unicode '/2010/05/centos-opening-port-80-for-service-httpd.html', !!python/unicode '2010/05/amazing-list-of-articles-for-centos-setup.html',
   !!python/unicode '2011/11/sublime-text-2-fedora-1516-unofficial-repo.html', macros.j2,
   footer.j2, !!python/unicode '/2010/10/setting-up-ssh-key-authentication-centosfedora.html',

@@ -1,0 +1,56 @@
+---
+title: Setting up 389 Directory Server
+created: !!timestamp '2012-03-24 21:18:00'
+tags:
+    - redhat
+    - ldap
+---
+{% mark excerpt %}
+
+
+I've decided to take the first of 5 exams to get my [Red Hat Certified Architect Certification](http://www.redhat.com/training/certifications/rhca/). The first exam I am going for is the EX423, [Red Hat Enterprise Directory Services and Authentication Expertise Exam](http://www.redhat.com/training/courses/ex423/), which focuses a lot on LDAP.
+
+According to the [exam objectives](http://www.redhat.com/certification/ex423/prep_guide/) they will be focusing primarily on implementing authentication with Red Hat Directory Server, which is an add-on that is available with a RHEL subscription. Fortunately, like the OS itself, there is an open source version that ships with Fedora, 389 Directory Server.
+
+{% endmark %}
+
+I've never actually had to set this up before, most companies already have this setup when you join. At the company I am with now, there is a whole department that does nothing but ldap/user administration, so we don't get to touch the internals at all.
+
+*Setup Fedora 16*
+
+I am using VirtualBox, and just installing F16 fresh. Nothing special, just installing a base server install. Not going into the actual setup here, if you are reading this I assume you can install Fedora, being engineers and all ;-)
+
+*Install 389-ds and dependencies*
+
+Once my installation is complete, and my box is all updated, I installed the 389-ds package
+	
+	~# yum install 389-ds
+
+*Create non-privileged user*
+
+Its recommended to create a seperate user for this, rather than use nobody, since nothing should really be owned by nobody.
+
+ 	~# useradd -s /sbin/nologin ldapuser
+
+
+*Run setup script*
+
+Once thats all ready to go, I had to run the setup script:
+
+    ~# setup-ds-admin.pl
+
+which consited of answering a number of questions about setup, most of which I left default. I did modify the hostname, using an actual domain name I configured for this setup. Seems like it was doing a dns lookup as part of the setup (I could be wrong).
+
+Note: One major difference is that 389-ds has some small changes in the way it works, since its moved to systemd and out of chkconfig. So to start, its no longer:
+
+	~# service dirsrv start
+
+instead its:
+
+	~# systemctl start dirsrv.target
+
+And to configure start at boot use systemctl instead of chkconfig:
+
+	~# systemctl enable dirsrv.target
+
+More to come... I'm done for today :-)
