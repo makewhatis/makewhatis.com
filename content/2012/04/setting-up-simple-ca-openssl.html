@@ -9,13 +9,13 @@ tags:
 I'm studying for the RHCA exam 423, and one of my tasks is to setup TLS for Directory Server. I know RedHat like to follow standards, and am guessing that I will have to use a CA signed cert when setting this up. So in the name of doing things right, I'm going to setup a little CA that I can work with. 
 
 {% endmark %}
-## Setting up OpenSSL as a Certificate Authority (Quick and Dirty)
+#### Setting up OpenSSL as a Certificate Authority (Quick and Dirty)
 
 I set this CA up on Fedora 16, the official AMI on EC2.
 
 Right out of the box OpenSSL is ready to act as a CA, so this was not that crazy. 
 
-### The Configuration
+##### The Configuration
 
 First I looked to see what the default CA configuration was in the /etc/pki/tls/openssl.cnf.
 
@@ -46,7 +46,7 @@ Really what I was concerned with was the "dir" attribute, and that is set for /e
 	[root@ca ~]# ls /etc/pki/CA/
 	certs  crl  newcerts  private
 
-### Create the CA Certs
+##### Create the CA Certs
 
 First real step to creating a little CA is to create the CA key/cert pair that will be doing the signing. 
 
@@ -74,7 +74,7 @@ First real step to creating a little CA is to create the CA key/cert pair that w
 	Common Name (eg, your name or your server's hostname) []:Makewhatis    
 	Email Address []:david@makewhatis.com
 
-### Some Security
+##### Some Security
 
 Lets make sure that nobody can read that key but root while we are at it, even though this is just for practice. 
 
@@ -91,9 +91,9 @@ Also make sure the private key dir is only accessible by root
 
 This is looking good. Now we can actually do some signing!
 
-### Signing Certs
+##### Signing Certs
 
-#### Client generates their key
+##### Client generates their key
 
 	[root@ca ~]# openssl genrsa 1024 > www.example.com.key
 	Generating RSA private key, 1024 bit long modulus
@@ -101,7 +101,7 @@ This is looking good. Now we can actually do some signing!
 	........++++++
 	e is 65537 (0x10001)
 
-#### Then they generate their CSR (Certificate Signing Request)
+##### Then they generate their CSR (Certificate Signing Request)
 
 	[root@ca ~]# openssl req -new -key www.example.com.key -out www.example.com.csr
 	You are about to be asked to enter information that will be incorporated
@@ -124,7 +124,7 @@ This is looking good. Now we can actually do some signing!
 	A challenge password []:
 	An optional company name []:
 
-#### Make their certificate
+##### Make their certificate
 
 Once the client has generated their CSR and sent it to us, we can actually sign a .crt file for them. 
 
