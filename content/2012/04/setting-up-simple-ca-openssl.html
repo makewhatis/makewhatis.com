@@ -1,0 +1,192 @@
+---
+title: Setting up a Simple Certificate Authority with OpenSSL
+created: !!timestamp '2012-04-07 00:00:00'
+tags:
+    - fedora
+    - rhca
+ ---
+
+I'm studying for the RHCA exam 423, and one of my tasks is to setup TLS for Directory Server. I know RedHat like to follow standards, and am guessing that I will have to use a CA signed cert when setting this up. So in the name of doing things right, I'm going to setup a little CA that I can work with. 
+
+Setting up OpenSSL as a Certificate Authority (Quick and Dirty)
+===============================================================
+
+I set this CA up on Fedora 16, the official AMI on EC2.
+
+Right out of the box OpenSSL is ready to act as a CA, so this was not that crazy. 
+
+The Configuration
+-----------------
+
+First I looked to see what the default CA configuration was in the /etc/pki/tls/openssl.cnf.
+
+	[ CA_default ]
+	dir             = /etc/pki/CA           # Where everything is kept
+	certs           = $dir/certs            # Where the issued certs are kept
+	crl_dir         = $dir/crl              # Where the issued crl are kept
+	database        = $dir/index.txt        # database index file.
+	#unique_subject = no                    # Set to 'no' to allow creation of
+	new_certs_dir   = $dir/newcerts         # default place for new certs.
+	certificate     = $dir/cacert.pem       # The CA certificate
+	serial          = $dir/serial           # The current serial number
+	crlnumber       = $dir/crlnumber        # the current crl number
+										    # must be commented out to leave a V1 CRL
+	crl             = $dir/crl.pem          # The current CRL
+	private_key     = $dir/private/cakey.pem# The private key
+	RANDFILE        = $dir/private/.rand    # private random number file
+
+	x509_extensions = usr_cert              # The extentions to add to the cert
+
+	# Comment out the following two lines for the "traditional"
+	# (and highly broken) format.
+	name_opt        = ca_default            # Subject Name options
+	cert_opt        = ca_default            # Certificate field options
+
+Really what I was concerned with was the "dir" attribute, and that is set for /etc/pki/CA, which is fine for me since this is just for studying. 
+
+	[root@ca ~]# ls /etc/pki/CA/
+	certs  crl  newcerts  private
+
+Create the CA Certs
+-------------------
+
+First real step to creating a little CA is to create the CA key/cert pair that will be doing the signing. 
+
+	[root@ca ~]# cd /etc/pki/CA/
+	[root@ca CA]# openssl req -new -x509 -extensions v3_ca -keyout  private/CA.key -out CA.crt -days 365 -config ../tls/openssl.cnf
+	Generating a 2048 bit RSA private key
+	......................................................................................................+++
+	.........+++
+	writing new private key to 'private/CA.key'
+	Enter PEM pass phrase:
+	Verifying - Enter PEM pass phrase:
+	-----
+	You are about to be asked to enter information that will be incorporated
+	into your certificate request.
+	What you are about to enter is what is called a Distinguished Name or a DN.
+	There are quite a few fields but you can leave some blank
+	For some fields there will be a default value,
+	If you enter '.', the field will be left blank.
+	-----
+	Country Name (2 letter code) [XX]:US
+	State or Province Name (full name) []:Arizona
+	Locality Name (eg, city) [Default City]:Phoenix
+	Organization Name (eg, company) [Default Company Ltd]:Makewhatis Corp
+	Organizational Unit Name (eg, section) []:PKI
+	Common Name (eg, your name or your server's hostname) []:Makewhatis    
+	Email Address []:david@makewhatis.com
+
+Some Security
+-------------
+
+Lets make sure that nobody can read that key but root while we are at it, even though this is just for practice. 
+
+	[root@ca CA]# chmod 400 /etc/pki/CA/private/CA.key 
+
+Also make sure the private key dir is only accessible by root
+
+	[root@ca CA]# ls -l /etc/pki/CA/
+	total 16
+	drwxr-xr-x. 2 root root 4096 Apr  7 20:30 certs
+	drwxr-xr-x. 2 root root 4096 Jan 19 11:37 crl
+	drwxr-xr-x. 2 root root 4096 Jan 19 11:37 newcerts
+	drwx------. 2 root root 4096 Apr  7 20:25 private
+
+This is looking good. Now we can actually do some signing!
+
+Signing Certs
+-------------
+
+
+#### Client generates their key
+
+	[root@ca ~]# openssl genrsa 1024 > www.example.com.key
+	Generating RSA private key, 1024 bit long modulus
+	................................++++++
+	........++++++
+	e is 65537 (0x10001)
+
+#### Then they generate their CSR (Certificate Signing Request)
+
+	[root@ca ~]# openssl req -new -key www.example.com.key -out www.example.com.csr
+	You are about to be asked to enter information that will be incorporated
+	into your certificate request.
+	What you are about to enter is what is called a Distinguished Name or a DN.
+	There are quite a few fields but you can leave some blank
+	For some fields there will be a default value,
+	If you enter '.', the field will be left blank.
+	-----
+	Country Name (2 letter code) [XX]:US
+	State or Province Name (full name) []:Imagination Land
+	Locality Name (eg, city) [Default City]:Up Top
+	Organization Name (eg, company) [Default Company Ltd]:Make it So LLC
+	Organizational Unit Name (eg, section) []:We dont
+	Common Name (eg, your name or your server's hostname) []:www.example.com
+	Email Address []:me@myownmind.ee
+
+	Please enter the following 'extra' attributes
+	to be sent with your certificate request
+	A challenge password []:
+	An optional company name []:
+
+#### Make their certificate
+
+Once the client has generated their CSR and sent it to us, we can actually sign a .crt file for them. 
+
+	[root@ca ~]# openssl x509 -req -days 365 -in www.example.com.csr -CA /etc/pki/CA/certs/CA.crt -CAkey /etc/pki/CA/private/CA.key -CAcreateserial -out www.example.com.crt
+	Signature ok
+	subject=/C=US/ST=Imagination Land/L=Up Top/O=Make it So LLC/OU=We dont/CN=www.example.com/emailAddress=me@myownmind.ee
+	Getting CA Private Key
+	Enter pass phrase for /etc/pki/CA/private/CA.key:
+
+Now we have the certificate, and we can test it to make sure its what we were looking to get out of this.
+
+	[root@ca ~]# ls
+	www.example.com.crt  www.example.com.csr
+
+	[root@ca ~]# openssl x509 -in www.example.com.crt -text -noout
+	Certificate:
+	    Data:
+	        Version: 1 (0x0)
+	        Serial Number:
+	            e4:26:ab:0b:1c:3d:8a:56
+	        Signature Algorithm: sha1WithRSAEncryption
+	        Issuer: C=US, ST=Arizona, L=Phoenix, O=Makewhatis Corp, OU=PKI, CN=Makewhatis/emailAddress=david@makewhatis.com
+	        Validity
+	            Not Before: Apr  8 01:07:09 2012 GMT
+	            Not After : Apr  8 01:07:09 2013 GMT
+	        Subject: C=US, ST=Imagination Land, L=Up Top, O=Make it So LLC, OU=We dont, CN=www.example.com/emailAddress=me@myownmind.ee
+	        Subject Public Key Info:
+	            Public Key Algorithm: rsaEncryption
+	                Public-Key: (1024 bit)
+	                Modulus:
+	                    00:c0:1f:5f:bc:9d:c6:c3:52:b6:30:56:8e:6d:4b:
+	                    c7:f5:7e:ad:aa:1a:cd:a8:8b:99:c5:ed:96:3b:a2:
+	                    a4:bf:95:50:f7:85:fa:a0:23:f3:32:23:e3:91:d5:
+	                    e9:f1:70:bb:e4:20:b3:8e:d2:29:dd:3a:07:db:cb:
+	                    63:6d:ee:a6:64:55:0c:cc:56:5d:1c:46:fa:6a:c4:
+	                    e0:0d:3d:61:c8:c4:75:df:47:53:9f:df:e8:77:43:
+	                    ae:cc:6b:6c:d8:dd:6c:13:d4:9c:d8:3b:86:46:e5:
+	                    ce:d1:2a:8b:46:1b:06:44:e5:5b:07:5f:09:1a:fd:
+	                    84:f5:ad:e9:7a:21:00:6c:d1
+	                Exponent: 65537 (0x10001)
+	    Signature Algorithm: sha1WithRSAEncryption
+	        91:80:89:cc:c2:e6:95:4f:10:c3:14:95:1e:57:50:30:04:e4:
+	        f0:36:04:20:56:e0:2d:69:d0:9d:56:3b:c1:77:b6:80:c0:7a:
+	        92:9b:31:ef:c0:48:30:30:9c:da:c2:a7:16:37:c5:45:31:c1:
+	        ca:e6:3e:4c:18:1b:93:9f:99:20:79:09:8a:0f:e5:42:0b:a3:
+	        21:c6:67:5c:7a:45:da:93:cd:e0:ed:6e:f3:84:d6:3d:6f:c6:
+	        06:89:58:7a:da:94:0f:de:6f:34:ec:5a:c2:fe:36:12:a2:aa:
+	        9a:26:8f:a2:dd:93:57:3a:80:f3:4c:c2:90:94:d7:a3:c4:6f:
+	        f6:b8:42:23:37:13:22:19:bf:d2:ed:b9:45:9b:0c:96:57:fa:
+	        a6:0a:54:be:9b:82:ea:99:fd:8b:f6:a7:a9:6f:90:fa:60:e9:
+	        9e:65:4b:54:b6:23:e2:f2:7e:a8:08:da:a9:b3:fa:61:1a:51:
+	        76:e9:b1:af:69:e7:24:34:a9:4c:63:b2:6e:cf:b0:d8:d1:73:
+	        62:ca:5c:21:18:0b:a1:e3:0d:22:67:37:da:11:02:6a:5a:13:
+	        05:bf:78:a8:cd:9b:39:6d:15:34:c6:a2:2d:23:57:b0:31:e3:
+	        84:c8:06:d9:0f:23:08:66:ff:0f:67:ef:e2:74:b6:20:5d:4f:
+	        73:b7:ef:61
+
+In order to use this without getting a warning, you will have to import the CA.crt file into the application you are using, but other than that, the CA is setup. 
+
+
