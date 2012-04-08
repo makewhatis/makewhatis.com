@@ -271,6 +271,7 @@
 !!python/unicode 'media/skeleton/stylesheets/github.css': []
 !!python/unicode 'media/skeleton/stylesheets/layout.css': []
 !!python/unicode 'media/skeleton/stylesheets/skeleton.css': []
+!!python/unicode 'media/skeleton/stylesheets/syntax.css': []
 !!python/unicode 'portfolio/index.html': [macros.j2, base.j2, analytics.j2]
 !!python/unicode 'posts/2008-11-27-self-reliance.html': [blog.j2, macros.j2, base.j2,
   analytics.j2]
