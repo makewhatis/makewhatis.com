@@ -1,0 +1,36 @@
+---
+title: Koji building from SCM using sources file
+created: !!timestamp '2012-05-18 00:00:00'
+tags:
+    - fedora
+    - rhca
+ ---
+{% mark excerpt %}
+I've been involved in building out an rpmbuild system using Koji as our build server. One cool feature is being able to keep all of your sources in git, like patches, specs, etc. One bummer with that is the tar files with actual source code. Well fedora came up with a way to reference that via a sources file. 
+
+Took some digging into the internals to see exactly how that worked. Finally I ran across this post, [http://www.linux-archive.org/discussion-fedora-build-system-buildsys-lists-fedoraproject-org/461285-private-koji-instance-private-scm-make-sources-private-lookaside.html](http://www.linux-archive.org/discussion-fedora-build-system-buildsys-lists-fedoraproject-org/461285-private-koji-instance-private-scm-make-sources-private-lookaside.html), on a mailing list by Jesse Keating, one of Red Hats employees who has a big hand in how that all works. 
+{% endmark %}
+Basically, if you are using Koji, you should be using pyrpkg, and some plugin similar to fedpkg if you are tring to build from SCM, or at least have that package configured ont the Koji Builder. 
+
+With the pyrpkg tool, you can call the following command while in a git repo (of sources):
+
+    $ fedpkg sources
+
+This causes fedpkg to parse a file called "sources" in that same directory, to get two things: 1. filename 2. md5 sum of the file. It uses these two things to pull the file from the lookaside cache server (another piece). The examples tell you that there is a default command of 
+
+    $ make sources
+
+happening. This is true, that is the default command in the koji configuration. This makes little sense, as your package may not have a makefile, and very unlikely that your makefile is configured to pull from the lookaside, unless you did that. 
+
+    $ fedpkg sources
+
+This should be the command run from the scm checkout configured in koji.conf
+
+    "allowed is a space-separated list of host:repository[:use_common[:source_cmd]] tuples.  Incorrectly-formatted
+        tuples will be ignored."
+
+So my line would look like this to use fedpkg to download sources:
+
+    allowed_scms=git.example.org:/example.git:no:[fedpkg,sources] svn.example.org:/users/*:no
+
+I have not confirmed that exact syntax just yet. But the key here is to use fedpkg (or a custom pyrpkg plugin) command to download sources into your scm repo during buildtime.
