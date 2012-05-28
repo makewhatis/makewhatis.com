@@ -1,0 +1,26 @@
+---
+title: Kerberos GSSAPI Error 389 Directory Server
+created: !!timestamp '2012-05-28 00:00:00'
+tags:
+    - fedora
+    - rhca
+    - 389-ds
+ ---
+{% mark excerpt %}
+
+Was playing with 389 Directory Server, preparing for my upcoming exam and ran into a weird issue. I was able to authenticate via ssh to my client server, against the 389 DS, via Kerberos just fine. But when I ran a ldapsearch or any other query with "-Y GSSAPI", it bombed out with this error:
+
+    $ ldapsearch -p 389 -h example.com -Y GSSAPI
+    SASL/GSSAPI authentication started
+    ldap_sasl_interactive_bind_s: Invalid credentials (49)
+        additional info: SASL(-1): generic failure: GSSAPI Error: Unspecified GSS failure.  Minor code may provide more information (Permission denied)
+
+This was the only thing bombing out, because I could auth just fine, I could kinit and get tickets, and really anything else I tried worked, besides this. 
+
+After confirming that Kerberos was working, Directory Server was working, and the only thing now working was ldap querys via Kerberos to that particular server, I knew it was the way that DS was using Kerberos. It started up just fine as well.
+
+Turns out I was missing the export statement in the sysconfig file for dirsrv on the Directory Server itself. I had the `KRB5_KTNAME=FILE:/etc/ldap.keytab; ` just not `KRB5_KTNAME=FILE:/etc/ldap.keytab; export KRB5_KTNAME`.
+
+So if you are getting a weird auth error, double check that the KRB environmental variables are setup correctly. 
+
+{% endmark %}
