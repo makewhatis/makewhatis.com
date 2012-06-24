@@ -13,7 +13,9 @@ Was playing with 389 Directory Server, preparing for my upcoming exam and ran in
     $ ldapsearch -p 389 -h example.com -Y GSSAPI
     SASL/GSSAPI authentication started
     ldap_sasl_interactive_bind_s: Invalid credentials (49)
-        additional info: SASL(-1): generic failure: GSSAPI Error: Unspecified GSS failure.  Minor code may provide more information (Permission denied)
+        additional info: SASL(-1): generic failure: GSSAPI Error: 
+        										Unspecified GSS failure.  
+        Minor code may provide more information (Permission denied)
 
 This was the only thing bombing out, because I could auth just fine, I could kinit and get tickets, and really anything else I tried worked, besides this. 
 
@@ -22,5 +24,11 @@ After confirming that Kerberos was working, Directory Server was working, and th
 Turns out I was missing the export statement in the sysconfig file for dirsrv on the Directory Server itself. I had the `KRB5_KTNAME=FILE:/etc/ldap.keytab; ` just not `KRB5_KTNAME=FILE:/etc/ldap.keytab; export KRB5_KTNAME`.
 
 So if you are getting a weird auth error, double check that the KRB environmental variables are setup correctly. 
+
+Another thing I ran into that will cause the same exact error... is ldap not being able to read the keytab for kerberos. 
+
+	~]# ll /etc/ldap.keytab
+	-rw------- 1 root root 436 Jun 23 20:25 /etc/ldap.keytab
+	~]# chmod 644 /etc/ldap.keytab 
 
 {% endmark %}
